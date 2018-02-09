@@ -1,0 +1,158 @@
+
+require(dplyr)
+require(sf)
+
+
+input.data <- "~/proj/SUDS_Famalicao/CAPITULO_2/modelo_rede_drenagem/run_model/"
+
+step=5*60
+
+### prepare precipitation
+require(lubridate)
+p <- read.table(paste0(input.data,"/precipitacao_raw"),sep=",")
+subgroup <- 8:20
+I0_h <- p[,-3:-4] %>% mutate(dt=dmy_hm(V1)) %>% rename(value=V2) %>% select(dt,value)
+
+step5m <- seq(I0_h$dt[1],I0_h$dt[length(I0_h$dt)],paste0(subbacia$dt[1]," sec"))
+
+time <- data.frame(year=year(step5m),month=month(step5m),day=day(step5m),hour=hour(step5m),minute=minute(step5m),second=second(step5m))
+       
+I0 <- full_join(time,I0_h)
+posix <- ISOdatetime(year=I0$year,month=I0$month,day=I0$day,hour=I0$hour,min=I0$minute,sec=I0$second,tz="Europe/Lisbon")
+I0 <- xts(I0$value,posix)
+
+
+## prepare subbasin
+
+losses.sb <- readRDS(paste0(input.data,"/losses.rds")) %>% rename(name=subbacia)
+
+subbasinsf <- readRDS(paste0(input.data,"/parm_sb.rds")) %>%
+    st_as_sf %>%
+    as_tibble %>%
+    mutate(dt=5*60) %>%
+
+subbasin <- readRDS(paste0(input.data,"/parm_sb.rds")) %>%
+    .@data %>%
+    as_tibble %>%
+    mutate(dt=step) %>%
+    rename(L=longest_path,S=av_slope)
+
+
+i <- IDF(D,T)
+inlettime <- inlet_time(L,n,i,S)
+
+
+
+rename(name=subbacia) %>%
+    left_join(.,select(losses.sb,name,initial.existente,permanent.existente),by=name) %>%
+    rename(hi=initial.existente,he=permanent.existente)
+
+
+##### define network
+
+strahler <- read.table(paste0(input.data,"/strahler.existente"),header=T,sep="\t")
+updown <- select(strahler, subbacia,flows_to) %>% rename(upstream=subbacia,downstream=flows_to)
+
+network <- updown2idup(updown) %>% filter(id>0) %>% rename(subbacia=id) %>% left_join(.,select(strahler,subbacia,strahler))
+
+c_esc <- st_as_sf(parm) %>%
+    select(subbacia,c_existente,c_proposta)
+
+#st_write(c_esc,"/home/delgado/TMP/c_esc/c_esc.shp")
+
+#x <- left_join(parm@data,losses.sb)
+#xx <- left_join(x,strahler)
+
+dt <- 5*60 ## dt in seconds
+
+xx$dt <- dt
+parm@data <- xx
+
+
+## editing retention structures 
+parm@data$volume_lago[is.na(parm@data$volume_lago)] <- 0
+
+## for existente 
+parm@data$Qoutmax <- 0
+parm@data$volume_lago <- 0
+
+
+p <- read.table(paste0(input.data,"/precipitacao_raw"),sep=",")
+subgroup <- 8:20
+p <- p[,-3:-4]
+
+posix <- as.POSIXct(p$V1,format="%d/%m/%Y %H:%M",tz="GMT")
+x <- p$V2
+I0_h <- data.frame(year=year(posix),month=month(posix),day=day(posix),hour=hour(posix),value=x) ### precipitation is hourly
+
+step5m <- seq(posix[1],posix[length(posix)],paste0(dt," sec"))
+
+time <- data.frame(year=year(step5m),month=month(step5m),day=day(step5m),hour=hour(step5m),minute=minute(step5m),second=second(step5m))
+       
+I0 <- full_join(time,I0_h)
+posix <- ISOdatetime(year=I0$year,month=I0$month,day=I0$day,hour=I0$hour,min=I0$minute,sec=I0$second,tz="Europe/Lisbon")
+I0 <- xts(I0$value,posix)
+
+
+parm.sb <- parm[,c("subbacia","bacia","area","Ksubbacia","volume_lago","Qoutmax","c_existente","initial.existente","permanent.existente","strahler","flows_to","dt")]
+
+##parm.sb <- parm[,c("subbacia","bacia","area","Ksubbacia","volume_lago","Qoutmax","c_proposta","initial.proposta","permanent.proposta","strahler","flows_to","dt")]
+
+
+parm.pipe <- parm[,c("subbacia","bacia","Kpipe","strahler","flows_to","dt")]
+
+
+parm.sb@data <- rename(.data=parm.sb@data,himax=initial.existente, hp = permanent.existente,c.factor=c_existente,K=Ksubbacia,Vmax=volume_lago)
+##parm.sb@data <- rename(.data=parm.sb@data,himax=initial.proposta, hp = permanent.proposta,c.factor=c_proposta,K=Ksubbacia,Vmax=volume_lago)
+
+parm.sb@data$hi <- parm.sb@data$himax
+parm.pipe@data <- rename(.data=parm.pipe@data,K=Kpipe)
+
+
+parm.sb@data$X <- 0.2
+parm.pipe@data$X <- 0.2 #muskingum parameter
+
+spObj <- gCentroid(parm.sb,byid=TRUE)
+spObj <- SpatialPointsDataFrame(spObj,parm.sb@data["subbacia"])
+
+
+#' define subbasin and pipe space time objects
+Qsb <- define_obj_Q(spObj,I0)
+Qpipe <- define_obj_Q(spObj,I0)
+Qret_str <- define_obj_Q(spObj,I0)
+Qsw <- define_obj_Q(spObj,I0)
+
+
+#' initialize data.frames for calculating each time step
+sb_previous0 <- cbind(Qsb@sp@data["subbacia"],Qsb[,1]@data)
+sb0 <- cbind(Qsb@sp@data["subbacia"],Qsb[,2]@data)
+        
+pipe_previous0 <- cbind(Qpipe@sp@data["subbacia"],Qpipe[,1]@data)
+pipe0 <- cbind(Qpipe@sp@data["subbacia"],Qpipe[,2]@data)
+
+ret_str_previous0 <- cbind(Qret_str@sp@data["subbacia"],Qret_str[,1]@data)
+ret_str0 <- cbind(Qret_str@sp@data["subbacia"],Qret_str[,2]@data)
+
+sw0 <- cbind(Qsw@sp@data["subbacia"],Qsw[,2]@data)
+
+
+#' output variables
+Qout <- cbind(data.frame(time=time(I0[1])),pipe0["subbacia"],pipe0["Qout"])
+Qin <- cbind(data.frame(time=time(I0[1])),pipe0["subbacia"],pipe0["Qin"]+pipe0["Qin_upstream"])
+
+V <- cbind(data.frame(time=time(I0[1])),pipe0["subbacia"],pipe0["V"])
+
+
+Vtotal <- data_frame(time=time(I0[1]),subbacia=sb0[,"subbacia"],ret_str=ret_str0[,"V"],sb=sb0[,"V"],pipe=pipe0[,"V"],sw=parm.sb@data[,"area"]*0.001*(parm.sb@data[,"himax"]-parm.sb@data[,"hi"])) %>% mutate(total=ret_str+sb+pipe+sw)
+
+Qin_ret_str <- cbind(data.frame(time=time(I0[1])),ret_str0["subbacia"],ret_str0["Qin"])
+
+Qout_ret_str <- cbind(data.frame(time=time(I0[1])),ret_str0["subbacia"],ret_str0["Qout"])
+
+Qoverflow_ret_str <- cbind(data.frame(time=time(I0[1])),ret_str0["subbacia"],ret_str0["Qoverflow"])
+
+Vret_str<- cbind(data.frame(time=time(I0[1])),ret_str0["subbacia"],ret_str0["V"])
+
+hi <- cbind(data.frame(time=time(I0[1])),parm.sb@data["subbacia"],parm.sb@data["hi"])
+Vsw <- cbind(data.frame(time=time(I0[1])),sw0["subbacia"],sw0["V"])
+

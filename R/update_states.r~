@@ -1,0 +1,155 @@
+#' gather upstream affluent, only one strahler order can be given, should loop through  strahler in main loop
+#' @return subbasin
+#' @param subbasin
+#' @param network.subset
+#' @export
+gatherAffluentStrahler <- function(network.subset, subbasin)
+{
+    subbasin.effluent <- list()
+    if(network.subset$strahler[1]==1)
+    {
+        
+        subbasin.subset <- subbasin %>% filter(name %in% pull(network.subset,name))
+    } else
+    {
+        for(i in distinct(network.subset,name) %>% pull)
+        {
+            upstr <- network.subset %>% filter(name==i) %>% pull(upstream)
+            affl <- subbasin %>% filter(name %in% upstr) %>% summarise(sum(effluent)) %>% pull
+            subbasin.effluent[[i]] <- subbasin %>% filter(name==i) %>% mutate(affluent=affl)
+        }
+        subbasin.subset <- do.call("rbind",subbasin.effluent)
+    }
+    
+    return(subbasin.subset)
+}
+
+#' compute basin's effluent from all surface processes
+#' @return subbasin
+#' @param runoff includes volume, runoff_in and runoff_out in subbasin
+#' @param pipe includes volume, qin and qout in pipe
+#' @param structure includes volume, qin and qout in structure
+#' @param subbasin
+#' @export
+computeEffluent <- function(runoff, pipe, structure, subbasin)
+{
+#    runoff <- computeRunoff(subbasin,runoff)
+    subbasin <- left_join(subbasin,select(runoff,name,runoff_out),by=name) %>%
+        rename(runoff=runoff_out)
+
+#    pipe <- routePipe(subbasin,pipe)
+    subbasin <- left_join(subbasin,select(pipe,name,Qout),by=name) %>%
+        rename(pipe_out=Qout)
+
+#    structure <- routeStructure(subbasin,structure)
+    subbasin <- left_join(subbasin,select(structure,name,Qin,Qout,Qoverflow,V),by=name) %>%
+        rename(str_in=Qin,str_out=Qout,str_over=Qover,str_v=V)
+    return(subbasin)
+}
+
+#' compute runoff
+#' @export
+computeRunoff <- function(subbasin,runoff)
+{
+    runoff <- left_join(runoff,select(subbasin,name,runoff,L,n,i,S),by=name)
+    
+    return(runoff)
+}
+
+
+#' route through pipe
+#' @export
+routePipe <- function(subbasin,pipe)
+{
+    pipe <- left_join(pipe,select(subbasin,name,affluent,runoff,K,X,dt),by=name) %>%
+        mutate(Qin=runoff+effluent) %>%
+        select(-runoff,-effluent)
+        Q_muskingum %>%
+        V_muskingum
+    
+    return(pipe)
+}
+
+#' route through structure
+#' @export
+routeStructure <- function(subbasin,structure)
+{
+    structure <- left_join(structure,select(subbasin,name,pipe_out),by=name) %>%
+        rename(Qin=pipe_out) %>%
+        Virtual_retention %>%
+        Qoverflow_ret_str %>%
+        Qoutflow_ret_str %>%
+        Actual_retention
+    
+    return(structure)
+}
+
+## state_surface
+
+#' @param subbasin is DataFrame containing C factor, initial loss, dt and intensity is the rainfall intensity in mm/h for time step i
+#' @return out is a dataframe with updated column Qin, meaning the inflow to the drainage network which shall be routed with a routing algorith
+#' @export
+loss_model <- function(subbasin,runoff)
+{
+    runoff <- left_join(runoff,select(subbasin,name,i,hi,area,c.factor),by=name) %>%
+        mutate(runoff_in=ifelse((i/3600-hi)<0,0,0.001*area*(i/3600-hi)*c.factor)) %>%
+    return(runoff)
+}
+#- inlet_time
+#- IDF
+#- loss_model
+
+### loop
+
+#' loop in time
+#' @export
+loopTime <- function(subbasin)
+{
+    k <- 0
+    r.list <- list()
+    p.list <- list()
+    s.list <- list()
+    sb.list <- list()
+    for(i in time)
+    {
+        for(str in strahler)
+        {
+            k <- k+1
+            network.subset <- network %>% filter(strahler==str)
+            subbasin <- gatherAffluentStrahler(network.subset,subbasin)
+            r.list[[k]] <- computeRunoff(subbasin,runoff) %>% mutate(dt=i)
+            p.list[[k]] <- routePipe(subbasin,pipe) %>% mutate(dt=i)
+            s.list[[k]] <- routeStructure(subbasin,structure) %>% mutate(dt=i)
+            subbasin <- computeEffluent(r.list[[i]],p.list[[i]],s.list[[i]],subbasin) %>% mutate(dt=i)
+            sb.list[[k]] <- subbasin
+        }        
+    }
+    runoff <- do.call("rbind",r.list)
+    pipe <- do.call("rbind",p.list)
+    structure <- do.call("rbind",s.list)
+    sb <- do.call("rbind",sb.list)
+
+    return(sb)
+
+}
+
+
+
+
+#' summary catchment
+#' @param swc soil water content
+#' @param et evapotranspiration
+#' @param runoff surface runoff
+#' @param qupstream
+#' @param qaffl outlet discharge before structure
+#' @param qeffl outlet discharge after structure
+#' @export
+makeSummary <- function()
+
+
+## state_connector
+
+
+
+
+
