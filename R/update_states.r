@@ -1,3 +1,20 @@
+
+
+    #### actualizar tudo na df subbasin!!!
+    #### actualizar tudo na df subbasin!!!
+    #### actualizar tudo na df subbasin!!!
+    #### actualizar tudo na df subbasin!!!
+    #### actualizar tudo na df subbasin!!!
+    #### actualizar tudo na df subbasin!!!
+    #### actualizar tudo na df subbasin!!!
+    #### actualizar tudo na df subbasin!!!
+    #### actualizar tudo na df subbasin!!!
+    #### actualizar tudo na df subbasin!!!
+    #### actualizar tudo na df subbasin!!!
+    #### actualizar tudo na df subbasin!!!
+
+
+
 #' gather upstream affluent, only one strahler order can be given, should loop through  strahler in main loop
 #' @return subbasin
 #' @param subbasin
@@ -47,12 +64,13 @@ computeEffluent <- function(runoff, pipe, structure, subbasin)
     return(subbasin)
 }
 
-#' compute runoff
+#' route runoff
 #' @export
-computeRunoff <- function(subbasin,runoff)
+routeRunoff <- function(subbasin,runoff)
 {
-    runoff <- left_join(runoff,select(subbasin,name,runoff,L,n,i,S),by=name)
-    
+    runoff <- left_join(runoff,select(subbasin,name,L,n,i,S),by="name") %>%
+        mutate(runoff_out=runoff_in) ## still need to route runoff
+
     return(runoff)
 }
 
@@ -61,9 +79,7 @@ computeRunoff <- function(subbasin,runoff)
 #' @export
 routePipe <- function(subbasin,pipe)
 {
-    pipe <- left_join(pipe,select(subbasin,name,affluent,runoff,K,X,dt),by=name) %>%
-        mutate(Qin=runoff+effluent) %>%
-        select(-runoff,-effluent)
+    pipe <- left_join(pipe,select(subbasin,name,K,X,dt),by="name") %>%
         Q_muskingum %>%
         V_muskingum
     
@@ -89,10 +105,11 @@ routeStructure <- function(subbasin,structure)
 #' @param subbasin is DataFrame containing C factor, initial loss, dt and intensity is the rainfall intensity in mm/h for time step i
 #' @return out is a dataframe with updated column Qin, meaning the inflow to the drainage network which shall be routed with a routing algorith
 #' @export
-loss_model <- function(subbasin,runoff)
+loss_model <- function(subbasin)
 {
-    runoff <- left_join(runoff,select(subbasin,name,i,hi,area,c.factor),by=name) %>%
+    runoff <- select(subbasin,name,i,hi,area,c.factor) %>%
         mutate(runoff_in=ifelse((i/3600-hi)<0,0,0.001*area*(i/3600-hi)*c.factor)) %>%
+        select(name,runoff_in,runoff_out)
     return(runoff)
 }
 #- inlet_time
@@ -105,23 +122,39 @@ loss_model <- function(subbasin,runoff)
 #' @export
 loopTime <- function(I0,subbasin,network.subset)
 {
+
+    #### actualizar tudo na df subbasin!!!
     k <- 0
     r.list <- list()
     p.list <- list()
     s.list <- list()
     sb.list <- list()
-    i=I0$dt[1]
-    for(i in I0$dt)
+    dti=I0$dt[1]
+    for(dti in I0$dt)
     {
+        subbasin <- mutate(subbasin,i=filter(I0,dt==dti) %>% pull(value))
         for(str in strahler)
         {
             k <- k+1
             network.subset <- network %>% filter(strahler==str)
             subbasin <- gatherAffluentStrahler(network.subset,subbasin)
-            r.list[[k]] <- computeRunoff(subbasin,runoff) %>% mutate(dta=i)
-            p.list[[k]] <- routePipe(subbasin,pipe) %>% mutate(dt=i)
-            s.list[[k]] <- routeStructure(subbasin,structure) %>% mutate(dt=i)
-            subbasin <- computeEffluent(r.list[[i]],p.list[[i]],s.list[[i]],subbasin) %>% mutate(dt=i)
+
+            runoff <- loss_model(subbasin)
+            
+            runoff <- routeRunoff(subbasin,runoff)
+            r.list[[k]] <- runoff %>% mutate(dt=dti)
+            subbasin.runoff <- left_join(subbasin,runoff,by="name")
+
+            pipe <-  subbasin.runoff %>%
+                mutate(Qin=runoff_out+affluent,Qout=0,Vprevious=V) %>%
+                select(name,Qin,Qout,V,Vprevious)
+            pipe <- routePipe(subbasin,pipe)
+            subbasin.pipe <- left_join(subbasin,pipe,by="name")
+            p.list[[k]] <- pipe %>% mutate(dt=dti)
+
+            
+            s.list[[k]] <- routeStructure(subbasin,structure) %>% mutate(dt=dti)
+            subbasin <- computeEffluent(r.list[[i]],p.list[[i]],s.list[[i]],subbasin) %>% mutate(dt=dti)
             sb.list[[k]] <- subbasin
         }        
     }

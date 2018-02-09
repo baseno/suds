@@ -46,7 +46,7 @@ subbasin <- readRDS(paste0(input.data,"/parm_sb.rds")) %>%
     rename(name=subbacia) %>%
     left_join(.,select(losses.sb,name,initial.existente,permanent.existente),by="name") %>%
     rename(hi=initial.existente,he=permanent.existente) %>%
-    mutate(X=0.2) %>% ### muskingum
+    mutate(X=0.2) %>%### muskingum
     mutate(Qoutmax=0,volume_lago=0,effluent=0) ### only for existente!!!
 
 
