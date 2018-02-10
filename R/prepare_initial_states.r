@@ -47,7 +47,11 @@ subbasin <- readRDS(paste0(input.data,"/parm_sb.rds")) %>%
     left_join(.,select(losses.sb,name,initial.existente,permanent.existente),by="name") %>%
     rename(hi=initial.existente,he=permanent.existente) %>%
     mutate(X=0.2) %>%### muskingum
-    mutate(Qoutmax=0,volume_lago=0,effluent=0) ### only for existente!!!
+    mutate(Qoutmax=0,volume_lago=0,effluent=0) %>%  ### only for existente!!!
+    mutate(pipe.V=0,pipe.Qin=0,pipe.Qout=0) %>% ## state variables
+    mutate(runoff.V=0,runoff.in=0,runoff.out=0) %>% ## state variables
+    mutate(structure.V=0,structure.Qin=0,structure.Qout=0) ## state variables
+    
 
 
 ##### define network

@@ -22,7 +22,7 @@
 #' @export
 gatherAffluentStrahler <- function(network.subset, subbasin)
 {
-    subbasin.effluent <- list()
+    subbasin.affluent <- list()
     if(network.subset$strahler[1]==1)
     {
         
@@ -33,9 +33,9 @@ gatherAffluentStrahler <- function(network.subset, subbasin)
         {
             upstr <- network.subset %>% filter(name==i) %>% pull(upstream)
             affl <- subbasin %>% filter(name %in% upstr) %>% summarise(sum(effluent)) %>% pull
-            subbasin.effluent[[i]] <- subbasin %>% filter(name==i) %>% mutate(affluent=affl)
+            subbasin.affluent[[i]] <- subbasin %>% filter(name==i) %>% mutate(affluent=affl)
         }
-        subbasin.subset <- do.call("rbind",subbasin.effluent)
+        subbasin.subset <- do.call("rbind",subbasin.affluent)
     }
     
     return(subbasin.subset)
@@ -66,32 +66,50 @@ computeEffluent <- function(runoff, pipe, structure, subbasin)
 
 #' route runoff
 #' @export
-routeRunoff <- function(subbasin,runoff)
+routeRunoff <- function(subbasin)
 {
-    runoff <- left_join(runoff,select(subbasin,name,L,n,i,S),by="name") %>%
-        mutate(runoff_out=runoff_in) ## still need to route runoff
+    runoff <- select(subbasin,name,runoff.in,runoff.out,runoff.V,L,n,i,S) %>%
+        mutate(runoff_in=runoff.in,runoff_out=runoff.in,V=runoff.V) ## still need to route runoff
 
     return(runoff)
+}
+
+updateSubbasinAfterRunoff <- function(subbasin,runoff)
+{
+    subbasin.updated <- left_join(select(subbasin,-runoff.V,-runoff.in,-runoff.out),select(runoff,V,runoff_in,runoff_out),by="name") %>%
+        rename(runoff.V=V,runoff.in=runoff_in,runoff.out=runoff_out)
+
+    return(subbasin.updated)
 }
 
 
 #' route through pipe
 #' @export
-routePipe <- function(subbasin,pipe)
+routePipe <- function(subbasin)
 {
-    pipe <- left_join(pipe,select(subbasin,name,K,X,dt),by="name") %>%
+    pipe <- select(subbasin,name,affluent,runoff_out,pipe.V,K,X) %>%
+        mutate(Qin=affluent+runoff_out,V=0,Qout=0) %>%
+        rename(Vprevious=pipe.V) %>%
         Q_muskingum %>%
         V_muskingum
     
     return(pipe)
 }
 
+updateSubbasinAfterPipe <- function(subbasin,pipe)
+{
+    subbasin.updated <- left_join(select(subbasin,-pipe.V,-pipe.Qin,-pipe.Qout),select(pipe,V,Qin,Qout),by="name") %>%
+        rename(pipe.V=V,pipe.Qin=Qin,pipe.Qout=Qout)
+
+    return(subbasin.updated)
+}
+
 #' route through structure
 #' @export
-routeStructure <- function(subbasin,structure)
+routeStructure <- function(subbasin)
 {
-    structure <- left_join(structure,select(subbasin,name,pipe_out),by=name) %>%
-        rename(Qin=pipe_out) %>%
+    structure <- select(subbasin,name,pipe.Qout,structure.V,Qoutmax,volume_lago) %>%
+        mutate(Qin=pipe.Qout,Vprevious=structure.V,Qout=0) %>%
         Virtual_retention %>%
         Qoverflow_ret_str %>%
         Qoutflow_ret_str %>%
@@ -99,6 +117,16 @@ routeStructure <- function(subbasin,structure)
     
     return(structure)
 }
+
+updateSubbasinAfterStructure <- function(subbasin,structure)
+{
+    subbasin.updated <- left_join(select(subbasin,-structure.V,-structure.Qin,-structure.Qout),select(structure,V,Qin,Qout),by="name") %>%
+        rename(structure.V=V,structure.Qin=Qin,structure.Qout=Qout)
+
+    return(subbasin.updated)
+}
+
+
 
 ## state_surface
 
@@ -141,11 +169,16 @@ loopTime <- function(I0,subbasin,network.subset)
 
             runoff <- loss_model(subbasin)
             
-            runoff <- routeRunoff(subbasin,runoff)
+            runoff <- routeRunoff(subbasin)
             r.list[[k]] <- runoff %>% mutate(dt=dti)
-            subbasin.runoff <- left_join(subbasin,runoff,by="name")
+            subbasin <- updateSubbasinAfterRunoff(subbasin,runoff)
+            
+            pipe <-  routePipe(subbasin)
+            subbasin <- updateSubbasinAfterPipe(subbasin,pipe)
 
-            pipe <-  subbasin.runoff %>%
+            #### and so on and so on
+
+            
                 mutate(Qin=runoff_out+affluent,Qout=0,Vprevious=V) %>%
                 select(name,Qin,Qout,V,Vprevious)
             pipe <- routePipe(subbasin,pipe)
