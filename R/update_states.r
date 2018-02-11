@@ -1,18 +1,5 @@
 
 
-    #### actualizar tudo na df subbasin!!!
-    #### actualizar tudo na df subbasin!!!
-    #### actualizar tudo na df subbasin!!!
-    #### actualizar tudo na df subbasin!!!
-    #### actualizar tudo na df subbasin!!!
-    #### actualizar tudo na df subbasin!!!
-    #### actualizar tudo na df subbasin!!!
-    #### actualizar tudo na df subbasin!!!
-    #### actualizar tudo na df subbasin!!!
-    #### actualizar tudo na df subbasin!!!
-    #### actualizar tudo na df subbasin!!!
-    #### actualizar tudo na df subbasin!!!
-
 
 
 #' gather upstream affluent, only one strahler order can be given, should loop through  strahler in main loop
@@ -64,20 +51,41 @@ computeEffluent <- function(runoff, pipe, structure, subbasin)
     return(subbasin)
 }
 
+
+lossModel <- function(subbasin)
+{
+    runoff <- select(subbasin,name,i,hi,area,c.factor,L,n,i,S) %>%
+        mutate(runoff_in=ifelse((i/3600-hi)<0,0,0.001*area*(i/3600-hi)*c.factor)) %>%
+        select(name,runoff_in)
+
+    return(runoff)
+}
+
+updateSubbasinAfterLossModel <- function(subbasin,runoff)
+{
+    subbasin.updated <- left_join(select(subbasin,-runoff),select(runoff,name,runoff_in),by="name") %>%
+        rename(runoff=runoff_in)
+
+    return(subbasin.updated)
+}
+
+
 #' route runoff
 #' @export
 routeRunoff <- function(subbasin)
 {
-    runoff <- select(subbasin,name,runoff.in,runoff.out,runoff.V,L,n,i,S) %>%
-        mutate(runoff_in=runoff.in,runoff_out=runoff.in,V=runoff.V) ## still need to route runoff
+    runoff <- select(subbasin,name,runoff,runoff.V,area,c.factor,L,n,i,S) %>%
+        mutate(runoff_out=runoff,V=runoff.V) %>% ## still need to route runoff
+        select(name,runoff,runoff_out,V)
 
+        
     return(runoff)
 }
 
 updateSubbasinAfterRunoff <- function(subbasin,runoff)
 {
-    subbasin.updated <- left_join(select(subbasin,-runoff.V,-runoff.in,-runoff.out),select(runoff,V,runoff_in,runoff_out),by="name") %>%
-        rename(runoff.V=V,runoff.in=runoff_in,runoff.out=runoff_out)
+    subbasin.updated <- left_join(select(subbasin,-runoff.V,-runoff,-runoff.out),select(runoff,name,V,runoff,runoff_out),by="name") %>%
+        rename(runoff.V=V,runoff.out=runoff_out)
 
     return(subbasin.updated)
 }
@@ -87,18 +95,19 @@ updateSubbasinAfterRunoff <- function(subbasin,runoff)
 #' @export
 routePipe <- function(subbasin)
 {
-    pipe <- select(subbasin,name,affluent,runoff_out,pipe.V,K,X) %>%
-        mutate(Qin=affluent+runoff_out,V=0,Qout=0) %>%
-        rename(Vprevious=pipe.V) %>%
+    pipe <- select(subbasin,name,affluent,runoff.out,pipe.V,Kpipe,X,step) %>%
+        mutate(Qin=affluent+runoff.out,V=0,Qout=0) %>%
+        rename(Vprevious=pipe.V,K=Kpipe,dt=step) %>%
         Q_muskingum %>%
-        V_muskingum
+        V_muskingum %>%
+        select(name,Qin,Qout,V)
     
     return(pipe)
 }
 
 updateSubbasinAfterPipe <- function(subbasin,pipe)
 {
-    subbasin.updated <- left_join(select(subbasin,-pipe.V,-pipe.Qin,-pipe.Qout),select(pipe,V,Qin,Qout),by="name") %>%
+    subbasin.updated <- left_join(select(subbasin,-pipe.V,-pipe.Qin,-pipe.Qout),select(pipe,name,V,Qin,Qout),by="name") %>%
         rename(pipe.V=V,pipe.Qin=Qin,pipe.Qout=Qout)
 
     return(subbasin.updated)
@@ -120,7 +129,7 @@ routeStructure <- function(subbasin)
 
 updateSubbasinAfterStructure <- function(subbasin,structure)
 {
-    subbasin.updated <- left_join(select(subbasin,-structure.V,-structure.Qin,-structure.Qout),select(structure,V,Qin,Qout),by="name") %>%
+    subbasin.updated <- left_join(select(subbasin,-structure.V,-structure.Qin,-structure.Qout),select(structure,name,V,Qin,Qout),by="name") %>%
         rename(structure.V=V,structure.Qin=Qin,structure.Qout=Qout)
 
     return(subbasin.updated)
@@ -129,18 +138,7 @@ updateSubbasinAfterStructure <- function(subbasin,structure)
 
 
 ## state_surface
-
-#' @param subbasin is DataFrame containing C factor, initial loss, dt and intensity is the rainfall intensity in mm/h for time step i
-#' @return out is a dataframe with updated column Qin, meaning the inflow to the drainage network which shall be routed with a routing algorith
-#' @export
-loss_model <- function(subbasin)
-{
-    runoff <- select(subbasin,name,i,hi,area,c.factor) %>%
-        mutate(runoff_in=ifelse((i/3600-hi)<0,0,0.001*area*(i/3600-hi)*c.factor)) %>%
-        select(name,runoff_in,runoff_out)
-    return(runoff)
-}
-#- inlet_time
+                                        #- inlet_time
 #- IDF
 #- loss_model
 
@@ -167,26 +165,22 @@ loopTime <- function(I0,subbasin,network.subset)
             network.subset <- network %>% filter(strahler==str)
             subbasin <- gatherAffluentStrahler(network.subset,subbasin)
 
-            runoff <- loss_model(subbasin)
-            
+            runoff <- lossModel(subbasin)
+            subbasin <- updateSubbasinAfterLossModel(subbasin,runoff)            
+
             runoff <- routeRunoff(subbasin)
             r.list[[k]] <- runoff %>% mutate(dt=dti)
             subbasin <- updateSubbasinAfterRunoff(subbasin,runoff)
             
             pipe <-  routePipe(subbasin)
+            p.list[[k]] <- pipe %>% mutate(dt=dti)
             subbasin <- updateSubbasinAfterPipe(subbasin,pipe)
 
-            #### and so on and so on
 
-            
-                mutate(Qin=runoff_out+affluent,Qout=0,Vprevious=V) %>%
-                select(name,Qin,Qout,V,Vprevious)
-            pipe <- routePipe(subbasin,pipe)
-            subbasin.pipe <- left_join(subbasin,pipe,by="name")
-            p.list[[k]] <- pipe %>% mutate(dt=dti)
+            structure <-  routeStructure(subbasin)
+            s.list[[k]] <- structure %>% mutate(dt=dti)
+            subbasin <- updateSubbasinAfterStructure(subbasin,structure)
 
-            
-            s.list[[k]] <- routeStructure(subbasin,structure) %>% mutate(dt=dti)
             subbasin <- computeEffluent(r.list[[i]],p.list[[i]],s.list[[i]],subbasin) %>% mutate(dt=dti)
             sb.list[[k]] <- subbasin
         }        
@@ -212,7 +206,8 @@ loopTime <- function(I0,subbasin,network.subset)
 #' @param qeffl outlet discharge after structure
 #' @export
 makeSummary <- function()
-
+{
+}
 
 ## state_connector
 
