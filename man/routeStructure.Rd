@@ -6,6 +6,9 @@
 \usage{
 routeStructure(subbasin)
 }
+\value{
+structure
+}
 \description{
 route through structure
 }

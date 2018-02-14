@@ -6,6 +6,9 @@
 \usage{
 routePipe(subbasin)
 }
+\value{
+pipe
+}
 \description{
 route through pipe
 }

@@ -2,10 +2,13 @@
 % Please edit documentation in R/update_states.r
 \name{routeRunoff}
 \alias{routeRunoff}
-\title{route runoff}
+\title{route runoff from lossModel givin in subbasin}
 \usage{
 routeRunoff(subbasin)
 }
+\value{
+runoff
+}
 \description{
-route runoff
+route runoff from lossModel givin in subbasin
 }

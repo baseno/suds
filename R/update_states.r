@@ -12,19 +12,19 @@ gatherAffluentStrahler <- function(network.subset, subbasin)
     subbasin.affluent <- list()
     if(network.subset$strahler[1]==1)
     {
-        
+
         subbasin.subset <- subbasin %>% filter(name %in% pull(network.subset,name))
     } else
     {
-        for(i in distinct(network.subset,name) %>% pull)
+        for(ii in distinct(network.subset,name) %>% pull)
         {
-            upstr <- network.subset %>% filter(name==i) %>% pull(upstream)
+            upstr <- network.subset %>% filter(name==ii) %>% pull(upstream)
             affl <- subbasin %>% filter(name %in% upstr) %>% summarise(sum(effluent)) %>% pull
-            subbasin.affluent[[i]] <- subbasin %>% filter(name==i) %>% mutate(affluent=affl)
+            subbasin.affluent[[ii]] <- subbasin %>% filter(name==ii) %>% mutate(affluent=affl)
         }
         subbasin.subset <- do.call("rbind",subbasin.affluent)
     }
-    
+
     return(subbasin.subset)
 }
 
@@ -51,26 +51,55 @@ computeEffluent <- function(runoff, pipe, structure, subbasin)
     return(subbasin)
 }
 
-
+#' compute effective runoff with loss model
+#' @return runoff
+#' @param subbasin is the global dataframe including rainfall intensity
+#' @export
 lossModel <- function(subbasin)
 {
-    runoff <- select(subbasin,name,i,hi,area,c.factor,L,n,i,S) %>%
-        mutate(runoff_in=ifelse((i/3600-hi)<0,0,0.001*area*(i/3600-hi)*c.factor)) %>%
-        select(name,runoff_in)
+    dt <- subbasin %>% pull(step) %>% .[1]
+    I <- subbasin %>% pull(i) %>% .[1]
+
+    r <- I*dt/3600
+    
+    runoff <- select(subbasin,name,hi,he,hi.max,area,c.factor,L,n,S)    
+
+    if(r==0) ## in case it does not rain...
+    {
+        runoff <- runoff %>%
+            mutate(hi=hi+he*step/(24*60*60),runoff_in=0) %>% ## assign zero in runoff generation and evaporate from soil
+            mutate(hi=ifelse(hi>hi.max,hi.max,hi))  %>% ## evaporate only until the soil compartment is empty 
+            select(name,runoff_in,hi) 
+    } else ## in case it rains...
+    {
+        runoff <- runoff %>%
+            mutate(runoff_in=ifelse(hi > r,0,0.001*area*(r-hi)*c.factor), ## generate runoff in case the soil compartment is full (this should be replaced by green ampt...)
+                   hi=ifelse(hi > r,hi-r,0)) %>% ## fill the soil compartment until it is totally full, ie hi=0
+            select(name,runoff_in,hi)
+    }
 
     return(runoff)
 }
 
+
+#' update subbasin dataframe after use of lossModel
+#' @return subbasin.updated
+#' @param subbasin
+#' @param runoff from lossModel
+#' @export
 updateSubbasinAfterLossModel <- function(subbasin,runoff)
 {
-    subbasin.updated <- left_join(select(subbasin,-runoff),select(runoff,name,runoff_in),by="name") %>%
+    subbasin.updated <- select(subbasin,-runoff,-hi) %>%
+        left_join(.,select(runoff,name,runoff_in,hi),by="name") %>%
         rename(runoff=runoff_in)
 
     return(subbasin.updated)
 }
 
 
-#' route runoff
+#' route runoff from lossModel givin in subbasin
+#' @return runoff
+#' @param subbasin
 #' @export
 routeRunoff <- function(subbasin)
 {
@@ -78,10 +107,15 @@ routeRunoff <- function(subbasin)
         mutate(runoff_out=runoff,V=runoff.V) %>% ## still need to route runoff
         select(name,runoff,runoff_out,V)
 
-        
+
     return(runoff)
 }
 
+#' update subbasin dataframe after runoff was routed
+#' @return subbasin.updated
+#' @param subbasin
+#' @param runoff as given by routeRunoff
+#' @export
 updateSubbasinAfterRunoff <- function(subbasin,runoff)
 {
     subbasin.updated <- left_join(select(subbasin,-runoff.V,-runoff,-runoff.out),select(runoff,name,V,runoff,runoff_out),by="name") %>%
@@ -92,6 +126,8 @@ updateSubbasinAfterRunoff <- function(subbasin,runoff)
 
 
 #' route through pipe
+#' @return pipe
+#' @param subbasin
 #' @export
 routePipe <- function(subbasin)
 {
@@ -101,10 +137,15 @@ routePipe <- function(subbasin)
         Q_muskingum %>%
         V_muskingum %>%
         select(name,Qin,Qout,V)
-    
+
     return(pipe)
 }
 
+#' update subbasin after pipe routing
+#' @return subbasin.updated
+#' @param subbasin
+#' @param pipe as given by routePipe
+#' @export
 updateSubbasinAfterPipe <- function(subbasin,pipe)
 {
     subbasin.updated <- left_join(select(subbasin,-pipe.V,-pipe.Qin,-pipe.Qout),select(pipe,name,V,Qin,Qout),by="name") %>%
@@ -114,19 +155,27 @@ updateSubbasinAfterPipe <- function(subbasin,pipe)
 }
 
 #' route through structure
+#' @return structure
+#' @param subbasin
 #' @export
 routeStructure <- function(subbasin)
 {
-    structure <- select(subbasin,name,pipe.Qout,structure.V,Qoutmax,volume_lago) %>%
+    structure <- select(subbasin,name,pipe.Qout,structure.Qoverflow,structure.V,Qoutmax,volume_lago,step) %>%
         mutate(Qin=pipe.Qout,Vprevious=structure.V,Qout=0) %>%
+        rename(dt=step,Vmax=volume_lago,Qoverflow=structure.Qoverflow,V=structure.V) %>%
         Virtual_retention %>%
         Qoverflow_ret_str %>%
         Qoutflow_ret_str %>%
         Actual_retention
-    
+
     return(structure)
 }
 
+#' update subbasin after structure
+#' @return subbasin.updated
+#' @param subbasin
+#' @param structure as given by routeStructure
+#' @export
 updateSubbasinAfterStructure <- function(subbasin,structure)
 {
     subbasin.updated <- left_join(select(subbasin,-structure.V,-structure.Qin,-structure.Qout),select(structure,name,V,Qin,Qout),by="name") %>%
@@ -146,7 +195,7 @@ updateSubbasinAfterStructure <- function(subbasin,structure)
 
 #' loop in time
 #' @export
-loopTime <- function(I0,subbasin,network.subset)
+loopTime <- function(I0,subbasin,network)
 {
 
     #### actualizar tudo na df subbasin!!!
@@ -155,23 +204,21 @@ loopTime <- function(I0,subbasin,network.subset)
     p.list <- list()
     s.list <- list()
     sb.list <- list()
-    dti=I0$dt[1]
     for(dti in I0$dt)
     {
         subbasin <- mutate(subbasin,i=filter(I0,dt==dti) %>% pull(value))
-        for(str in strahler)
+        for(str in network %>% distinct(strahler) %>% pull %>% sort)
         {
             k <- k+1
             network.subset <- network %>% filter(strahler==str)
             subbasin <- gatherAffluentStrahler(network.subset,subbasin)
-
             runoff <- lossModel(subbasin)
-            subbasin <- updateSubbasinAfterLossModel(subbasin,runoff)            
+            subbasin <- updateSubbasinAfterLossModel(subbasin,runoff)
 
             runoff <- routeRunoff(subbasin)
             r.list[[k]] <- runoff %>% mutate(dt=dti)
             subbasin <- updateSubbasinAfterRunoff(subbasin,runoff)
-            
+
             pipe <-  routePipe(subbasin)
             p.list[[k]] <- pipe %>% mutate(dt=dti)
             subbasin <- updateSubbasinAfterPipe(subbasin,pipe)
@@ -181,9 +228,12 @@ loopTime <- function(I0,subbasin,network.subset)
             s.list[[k]] <- structure %>% mutate(dt=dti)
             subbasin <- updateSubbasinAfterStructure(subbasin,structure)
 
-            subbasin <- computeEffluent(r.list[[i]],p.list[[i]],s.list[[i]],subbasin) %>% mutate(dt=dti)
             sb.list[[k]] <- subbasin
-        }        
+
+#            select(subbasin,name,runoff.out,pipe.Qout)
+#            subbasin <- computeEffluent(r.list[[i]],p.list[[i]],s.list[[i]],subbasin) %>% mutate(dt=dti)
+        }
+        subbasin <- do.call("rbind",sb.list)
     }
     runoff <- do.call("rbind",r.list)
     pipe <- do.call("rbind",p.list)
@@ -210,8 +260,3 @@ makeSummary <- function()
 }
 
 ## state_connector
-
-
-
-
-

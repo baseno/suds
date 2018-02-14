@@ -45,16 +45,17 @@ subbasin <- readRDS(paste0(input.data,"/parm_sb.rds")) %>%
     mutate(volume_lago=ifelse(is.na(volume_lago),0,volume_lago)) %>% ## editing retention structures
     rename(name=subbacia) %>%
     left_join(.,select(losses.sb,name,initial.existente,permanent.existente),by="name") %>%
-    rename(hi=initial.existente,he=permanent.existente) %>%
+    rename(hi.max=initial.existente,he=permanent.existente) %>%
+    mutate(hi=hi.max) %>%
     mutate(X=0.2) %>%### muskingum
     mutate(affluent=0,effluent=0) %>%
     mutate(c.factor=c_existente) %>%
     mutate(Qoutmax=0,volume_lago=0) %>%  ### only for existente!!!
     mutate(pipe.V=0,pipe.Qin=0,pipe.Qout=0) %>% ## state variables
     mutate(runoff.V=0,runoff=0,runoff.out=0) %>% ## state variables
-    mutate(structure.V=0,structure.Qin=0,structure.Qout=0) ## state variables
+    mutate(structure.V=0,structure.Qin=0,structure.Qout=0,structure.Qoverflow=0) ## state variables
     
-
+subbasin.template <- subbasin
 
 ##### define network
 
