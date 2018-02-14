@@ -195,7 +195,7 @@ updateSubbasinAfterStructure <- function(subbasin,structure)
 
 #' loop in time
 #' @export
-loopTime <- function(I0,subbasin,network)
+loopTime <- function(I0,subbasin.initial,network)
 {
 
     #### actualizar tudo na df subbasin!!!
@@ -204,41 +204,63 @@ loopTime <- function(I0,subbasin,network)
     p.list <- list()
     s.list <- list()
     sb.list <- list()
-    for(dti in I0$dt)
+
+
+    subbasin_out <- subbasin.initial
+
+    for(dti in seq(1,nrow(I0)))
     {
-        subbasin <- mutate(subbasin,i=filter(I0,dt==dti) %>% pull(value))
-        for(str in network %>% distinct(strahler) %>% pull %>% sort)
+        subbasin_out <- mutate(subbasin_out,i=slice(I0,dti) %>% pull(value))
+        cat("date: ",dti,"\n","nrows of subbasin: ",nrow(subbasin_out),"\n")
+        
+        for(str in list.str)
         {
-            k <- k+1
+            
+            subbasin <- subbasin_out
+            k=k+1
+                                        #str <- str+1
             network.subset <- network %>% filter(strahler==str)
             subbasin <- gatherAffluentStrahler(network.subset,subbasin)
             runoff <- lossModel(subbasin)
             subbasin <- updateSubbasinAfterLossModel(subbasin,runoff)
-
+            
             runoff <- routeRunoff(subbasin)
             r.list[[k]] <- runoff %>% mutate(dt=dti)
             subbasin <- updateSubbasinAfterRunoff(subbasin,runoff)
-
+            
             pipe <-  routePipe(subbasin)
             p.list[[k]] <- pipe %>% mutate(dt=dti)
             subbasin <- updateSubbasinAfterPipe(subbasin,pipe)
-
-
+            
+            
             structure <-  routeStructure(subbasin)
             s.list[[k]] <- structure %>% mutate(dt=dti)
             subbasin <- updateSubbasinAfterStructure(subbasin,structure)
 
-            sb.list[[k]] <- subbasin
+            ########
+            subbasin <- computeEffluent(runoff,pipe,structure,subbasin)
 
-#            select(subbasin,name,runoff.out,pipe.Qout)
-#            subbasin <- computeEffluent(r.list[[i]],p.list[[i]],s.list[[i]],subbasin) %>% mutate(dt=dti)
+            
+            anti_subbasin <- anti_join(subbasin_out,subbasin,by="name")
+            
+            subbasin_out <- bind_rows(subbasin,anti_subbasin)
+            cat(nrow(subbasin_out) - nrow(anti_subbasin),"\n")
+            
         }
-        subbasin <- do.call("rbind",sb.list)
     }
-    runoff <- do.call("rbind",r.list)
-    pipe <- do.call("rbind",p.list)
-    structure <- do.call("rbind",s.list)
-    sb <- do.call("rbind",sb.list)
+
+    runoff <- do.call("rbind",r.list) %>%
+        rename(runoff.in=runoff,runoff.out=runoff_out,runoff.V=V)
+
+    pipe <- do.call("rbind",p.list) %>%
+        rename(pipe.Qin=Qin,pipe.Qout=Qout,pipe.V=V)
+    
+    structure <- do.call("rbind",s.list) %>%
+        rename(structure.Qin=Qin,structure.Qoverflow=Qoverflow,structure.Qout=Qout,structure.V=V) %>%
+        select(name,structure.Qin,structure.Qoverflow,structure.Qout,structure.V,dt)
+
+    sb <- return
+
 
     return(sb)
 

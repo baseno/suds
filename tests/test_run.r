@@ -56,4 +56,11 @@ for(dti in seq(1,nrow(I0)))
     }
 }
 
-select(subbasin,i,runoff,pipe.Qin,pipe.Qout)
+    runoff <- do.call("rbind",r.list)
+    pipe <- do.call("rbind",p.list)
+    structure <- do.call("rbind",s.list)
+
+
+require(ggplot2)
+
+ggplot(pipe) + geom_line(aes(x=dt,y=Qout)) + facet_wrap(~name)
