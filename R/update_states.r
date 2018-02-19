@@ -37,7 +37,8 @@ gatherAffluentStrahler <- function(network.subset, subbasin)
 #' @export
 computeEffluent <- function(runoff, pipe, structure, subbasin)
 {
-#    runoff <- computeRunoff(subbasin,runoff)
+
+    
     subbasin <- left_join(subbasin,select(runoff,name,runoff_out),by=name) %>%
         rename(runoff=runoff_out)
 
@@ -155,7 +156,7 @@ updateSubbasinAfterPipe <- function(subbasin,pipe)
 }
 
 #' route through structure
-#' @return structure
+#' @return `structure`, a data frame with columns, `name`, `V`, `Vvirtual`, `Qoverflow`, `Qin`, `Qout`
 #' @param subbasin
 #' @export
 routeStructure <- function(subbasin)
@@ -225,20 +226,21 @@ loopTime <- function(I0,subbasin.initial,network)
             subbasin <- updateSubbasinAfterLossModel(subbasin,runoff)
             
             runoff <- routeRunoff(subbasin)
-            r.list[[k]] <- runoff %>% mutate(dt=dti)
+            r.list[[k]] <- runoff %>% mutate(dt=dti) %>% select(name,dt,runoff,runoff_out,V)
+
             subbasin <- updateSubbasinAfterRunoff(subbasin,runoff)
             
             pipe <-  routePipe(subbasin)
-            p.list[[k]] <- pipe %>% mutate(dt=dti)
+            p.list[[k]] <- pipe %>% mutate(dt=dti) %>% select(name,dt,Qin,Qout,V)
             subbasin <- updateSubbasinAfterPipe(subbasin,pipe)
             
             
             structure <-  routeStructure(subbasin)
-            s.list[[k]] <- structure %>% mutate(dt=dti)
+            s.list[[k]] <- structure %>% mutate(dt=dti) %>% select(name,dt,Qin,Qout,Qoverflow,V,Vvirtual)
             subbasin <- updateSubbasinAfterStructure(subbasin,structure)
 
             ########
-            subbasin <- computeEffluent(runoff,pipe,structure,subbasin)
+            effluent <- computeEffluent(runoff,pipe,structure,subbasin)
 
             
             anti_subbasin <- anti_join(subbasin_out,subbasin,by="name")
