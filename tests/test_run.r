@@ -47,9 +47,6 @@ for(dti in seq(1,nrow(I0)))
         structure <-  routeStructure(subbasin)
         s.list[[k]] <- structure %>% mutate(dt=dti)
         subbasin <- updateSubbasinAfterStructure(subbasin,structure)
-
-        subbasin <- computeEffluent(runoff,pipe,structure,subbasin)
-
         
         anti_subbasin <- anti_join(subbasin_out,subbasin,by="name")
 

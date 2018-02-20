@@ -30,21 +30,26 @@ gatherAffluentStrahler <- function(network.subset, subbasin)
 
 #' compute basin's effluent from all surface processes
 #' @return subbasin
-#' @param runoff with columns `name`, `V`, `runoff_in` and `runoff`
-#' @param pipe with columns `name, `V`, `Qin` and `Qout`
-#' @param structure with columns `name`, `V`, `Vvirtual`, `Qin`, `Qout` and `Qoverflow`
+#' @param runoff includes volume, runoff_in and runoff_out in subbasin
+#' @param pipe includes volume, qin and qout in pipe
+#' @param structure includes volume, qin and qout in structure
 #' @param subbasin
 #' @export
-computeEffluent <- function(subbasin)
+computeEffluent <- function(runoff, pipe, structure, subbasin)
 {
 
-   
-    subbasin.subset <- subbasin %>%
-        mutate(effluent=runoff.out) %>%
-        mutate(effluent=ifelse(pipe.L>0.001,pipe.Qout,effluent)) %>%  ## case there is a pipe
-        mutate(effluent=ifelse(volume_lage>0.001,structure.Qout+structure.Qoverflow,effluent))  ## case there is a structure
+    
+    subbasin <- left_join(subbasin,select(runoff,name,runoff_out),by=name) %>%
+        rename(runoff=runoff_out)
 
-    return(subbasin.subset)
+#    pipe <- routePipe(subbasin,pipe)
+    subbasin <- left_join(subbasin,select(pipe,name,Qout),by=name) %>%
+        rename(pipe_out=Qout)
+
+#    structure <- routeStructure(subbasin,structure)
+    subbasin <- left_join(subbasin,select(structure,name,Qin,Qout,Qoverflow,V),by=name) %>%
+        rename(str_in=Qin,str_out=Qout,str_over=Qover,str_v=V)
+    return(subbasin)
 }
 
 #' compute effective runoff with loss model
@@ -214,6 +219,7 @@ loopTime <- function(I0,subbasin.initial,network)
             
             subbasin <- subbasin_out
             k=k+1
+                                        #str <- str+1
             network.subset <- network %>% filter(strahler==str)
             subbasin <- gatherAffluentStrahler(network.subset,subbasin)
             runoff <- lossModel(subbasin)
@@ -234,14 +240,13 @@ loopTime <- function(I0,subbasin.initial,network)
             subbasin <- updateSubbasinAfterStructure(subbasin,structure)
 
             ########
-            subbasin <- computeEffluent(runoff,pipe,structure,subbasin)
+            effluent <- computeEffluent(runoff,pipe,structure,subbasin)
 
             
             anti_subbasin <- anti_join(subbasin_out,subbasin,by="name")
             
             subbasin_out <- bind_rows(subbasin,anti_subbasin)
             cat(nrow(subbasin_out) - nrow(anti_subbasin),"\n")
-            sb.list[[k]] <- subbasin_out
             
         }
     }
@@ -256,7 +261,8 @@ loopTime <- function(I0,subbasin.initial,network)
         rename(structure.Qin=Qin,structure.Qoverflow=Qoverflow,structure.Qout=Qout,structure.V=V) %>%
         select(name,structure.Qin,structure.Qoverflow,structure.Qout,structure.V,dt)
 
-    sb <- do.call("rbind",sb.list)
+    sb <- return
+
 
     return(sb)
 
