@@ -1,5 +1,6 @@
 require(lubridate)
 require(dplyr)
+require(data.table)
 require(wasa.ops)
 require(hydraulics)                                        #require(sf)
 
@@ -10,7 +11,6 @@ step=5*60
 ### prepare precipitation
 
 p <- read.table(paste0(input.data,"/precipitacao_raw"),sep=",") %>% as_tibble
-
 
 I0h <- p[,-3:-4] %>%
     mutate(dt=dmy_hm(V1)) %>%
