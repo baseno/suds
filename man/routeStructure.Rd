@@ -7,7 +7,7 @@
 routeStructure(subbasin)
 }
 \value{
-structure
+`structure`, a data frame with columns, `name`, `V`, `Vvirtual`, `Qoverflow`, `Qin`, `Qout`
 }
 \description{
 route through structure

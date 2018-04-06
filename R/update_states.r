@@ -39,16 +39,16 @@ computeEffluent <- function(runoff, pipe, structure, subbasin)
 {
 
     
-    subbasin <- left_join(subbasin,select(runoff,name,runoff_out),by=name) %>%
+    subbasin <- left_join(subbasin,select(runoff,name,runoff_out),by="name") %>%
         rename(runoff=runoff_out)
 
 #    pipe <- routePipe(subbasin,pipe)
-    subbasin <- left_join(subbasin,select(pipe,name,Qout),by=name) %>%
+    subbasin <- left_join(subbasin,select(pipe,name,Qout),by="name") %>%
         rename(pipe_out=Qout)
 
 #    structure <- routeStructure(subbasin,structure)
-    subbasin <- left_join(subbasin,select(structure,name,Qin,Qout,Qoverflow,V),by=name) %>%
-        rename(str_in=Qin,str_out=Qout,str_over=Qover,str_v=V)
+    subbasin <- left_join(subbasin,select(structure,name,Qin,Qout,Qoverflow,V),by="name") %>%
+        rename(str_in=Qin,str_out=Qout,str_over=Qoverflow,str_v=V)
     return(subbasin)
 }
 

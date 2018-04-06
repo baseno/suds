@@ -4,7 +4,7 @@
 \alias{loopTime}
 \title{loop in time}
 \usage{
-loopTime(I0, subbasin, network)
+loopTime(I0, subbasin.initial, network)
 }
 \description{
 loop in time
