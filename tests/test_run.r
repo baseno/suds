@@ -21,34 +21,31 @@ network <- as.data.table(network)
 subbasin_out <- subbasin.template %>% as.data.table
 setkey(subbasin_out,name)
 
-
-
 for(dti in seq(1,nrow(I0)))
 {
-    subbasin_out <- mutate(subbasin_out,i=I0[dti,value])
+    subbasin_out$i <- I0[dti,value]
+#    subbasin_out <- mutate(subbasin_out,i=I0[dti,value])
     cat("date: ",dti,"\n","nrows of subbasin: ",nrow(subbasin_out),"\n")
 
     for(str in list.str)
     {
-
         subbasin <- subbasin_out
         k=k+1
-    #    str <- str+1
         network.subset <- network[strahler==str]
         subbasin <- gatherAffluentStrahler(network.subset,subbasin)
         runoff <- lossModel(subbasin)
         subbasin <- updateSubbasinAfterLossModel(subbasin,runoff)
-        
+
         runoff <- routeRunoff(subbasin)
         r.list[[k]] <- runoff %>% mutate(dt=dti)
         subbasin <- updateSubbasinAfterRunoff(subbasin,runoff)
-        
+
         pipe <-  routePipe(subbasin)
         p.list[[k]] <- pipe %>% mutate(dt=dti)
         subbasin <- updateSubbasinAfterPipe(subbasin,pipe)
 
-       
-        
+
+
         structure <-  routeStructure(subbasin)
         s.list[[k]] <- structure %>% mutate(dt=dti)
         subbasin <- updateSubbasinAfterStructure(subbasin,structure)
@@ -59,11 +56,10 @@ for(dti in seq(1,nrow(I0)))
 
         subbasin_out <- bind_rows(subbasin,anti_subbasin)
 #        cat(nrow(subbasin_out) - nrow(anti_subbasin),"\n")
-        
+
     }
 }
 
     runoff <- do.call("rbind",r.list)
     pipe <- do.call("rbind",p.list)
     structure <- do.call("rbind",s.list)
-

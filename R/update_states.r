@@ -13,12 +13,12 @@ gatherAffluentStrahler <- function(network.subset, subbasin)
     if(network.subset$strahler[1]==1)
     {
 
-        subbasin.subset <- subbasin[name %in% network.subset[1]])
+        subbasin.subset <- subbasin[subbasin$name %in% network.subset$name]
     } else
     {
         for(ii in distinct(network.subset[1]) %>% pull)
         {
-            upstr <- network.subset %>% filter(name==ii) %>% pull(upstream)
+            upstr <- network.subset[name==ii,1] %>% filter(name==ii) %>% pull(upstream)
             affl <- subbasin %>% filter(name %in% upstr) %>% summarise(sum(effluent)) %>% pull
             subbasin.affluent[[ii]] <- subbasin %>% filter(name==ii) %>% mutate(affluent=affl)
         }
@@ -38,7 +38,7 @@ gatherAffluentStrahler <- function(network.subset, subbasin)
 computeEffluent <- function(runoff, pipe, structure, subbasin)
 {
 
-    
+
     subbasin <- left_join(subbasin,select(runoff,name,runoff_out),by="name") %>%
         rename(runoff=runoff_out)
 
@@ -62,15 +62,15 @@ lossModel <- function(subbasin)
     I <- subbasin %>% pull(i) %>% .[1]
 
     r <- I*dt/3600
-    
-    runoff <- select(subbasin,name,hi,he,hi.max,area,c.factor,L,n,S)    
+
+    runoff <- select(subbasin,name,hi,he,hi.max,area,c.factor,L,n,S)
 
     if(r==0) ## in case it does not rain...
     {
         runoff <- runoff %>%
             mutate(hi=hi+he*step/(24*60*60),runoff_in=0) %>% ## assign zero in runoff generation and evaporate from soil
-            mutate(hi=ifelse(hi>hi.max,hi.max,hi))  %>% ## evaporate only until the soil compartment is empty 
-            select(name,runoff_in,hi) 
+            mutate(hi=ifelse(hi>hi.max,hi.max,hi))  %>% ## evaporate only until the soil compartment is empty
+            select(name,runoff_in,hi)
     } else ## in case it rains...
     {
         runoff <- runoff %>%
@@ -213,10 +213,10 @@ loopTime <- function(I0,subbasin.initial,network)
     {
         subbasin_out <- mutate(subbasin_out,i=slice(I0,dti) %>% pull(value))
         cat("date: ",dti,"\n","nrows of subbasin: ",nrow(subbasin_out),"\n")
-        
+
         for(str in list.str)
         {
-            
+
             subbasin <- subbasin_out
             k=k+1
                                         #str <- str+1
@@ -224,17 +224,17 @@ loopTime <- function(I0,subbasin.initial,network)
             subbasin <- gatherAffluentStrahler(network.subset,subbasin)
             runoff <- lossModel(subbasin)
             subbasin <- updateSubbasinAfterLossModel(subbasin,runoff)
-            
+
             runoff <- routeRunoff(subbasin)
             r.list[[k]] <- runoff %>% mutate(dt=dti) %>% select(name,dt,runoff,runoff_out,V)
 
             subbasin <- updateSubbasinAfterRunoff(subbasin,runoff)
-            
+
             pipe <-  routePipe(subbasin)
             p.list[[k]] <- pipe %>% mutate(dt=dti) %>% select(name,dt,Qin,Qout,V)
             subbasin <- updateSubbasinAfterPipe(subbasin,pipe)
-            
-            
+
+
             structure <-  routeStructure(subbasin)
             s.list[[k]] <- structure %>% mutate(dt=dti) %>% select(name,dt,Qin,Qout,Qoverflow,V,Vvirtual)
             subbasin <- updateSubbasinAfterStructure(subbasin,structure)
@@ -242,12 +242,12 @@ loopTime <- function(I0,subbasin.initial,network)
             ########
             effluent <- computeEffluent(runoff,pipe,structure,subbasin)
 
-            
+
             anti_subbasin <- anti_join(subbasin_out,subbasin,by="name")
-            
+
             subbasin_out <- bind_rows(subbasin,anti_subbasin)
             cat(nrow(subbasin_out) - nrow(anti_subbasin),"\n")
-            
+
         }
     }
 
@@ -256,7 +256,7 @@ loopTime <- function(I0,subbasin.initial,network)
 
     pipe <- do.call("rbind",p.list) %>%
         rename(pipe.Qin=Qin,pipe.Qout=Qout,pipe.V=V)
-    
+
     structure <- do.call("rbind",s.list) %>%
         rename(structure.Qin=Qin,structure.Qoverflow=Qoverflow,structure.Qout=Qout,structure.V=V) %>%
         select(name,structure.Qin,structure.Qoverflow,structure.Qout,structure.V,dt)
