@@ -30,6 +30,7 @@ I0 <- left_join(tdf,I0h,by=c("year","month","day","hour")) %>%
 
 ## prepare subbasin
 
+
 losses.sb <- readRDS(paste0(input.data,"/losses.rds")) %>% rename(name=subbacia) %>% as_tibble
 
 #subbasinsf <- readRDS(paste0(input.data,"/parm_sb.rds")) %>%

@@ -16,9 +16,11 @@ I0 <- I0[70:100,] %>% as.data.table
 #dti=I0$dt[2]
 
 list.str <- network %>% distinct(strahler) %>% pull %>% sort
-subbasin_out <- subbasin.template %>% as.data.table
 
-subbasin_out[c.factor>0.8]
+network <- as.data.table(network)
+subbasin_out <- subbasin.template %>% as.data.table
+setkey(subbasin_out,name)
+
 
 
 for(dti in seq(1,nrow(I0)))
@@ -32,7 +34,7 @@ for(dti in seq(1,nrow(I0)))
         subbasin <- subbasin_out
         k=k+1
     #    str <- str+1
-        network.subset <- network %>% filter(strahler==str)
+        network.subset <- network[strahler==str]
         subbasin <- gatherAffluentStrahler(network.subset,subbasin)
         runoff <- lossModel(subbasin)
         subbasin <- updateSubbasinAfterLossModel(subbasin,runoff)
