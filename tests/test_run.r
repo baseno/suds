@@ -20,6 +20,7 @@ list.str <- network %>% distinct(strahler) %>% pull %>% sort
 network <- as.data.table(network)
 subbasin_out <- subbasin.template %>% as.data.table
 setkey(subbasin_out,name)
+#subbasin <- subbasin_out
 
 for(dti in seq(1,nrow(I0)))
 {
