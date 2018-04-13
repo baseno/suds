@@ -13,7 +13,6 @@ sb.list <- list()
 I0 <- I0[70:100,] %>% as.data.table
 
 
-#dti=I0$dt[2]
 
 list.str <- network %>% distinct(strahler) %>% pull %>% sort
 
@@ -21,6 +20,8 @@ network <- as.data.table(network)
 subbasin_out <- subbasin.template %>% as.data.table
 setkey(subbasin_out,name)
 #subbasin <- subbasin_out
+
+dti=2
 
 for(dti in seq(1,nrow(I0)))
 {

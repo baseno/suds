@@ -13,14 +13,20 @@ gatherAffluentStrahler <- function(network.subset, subbasin)
     if(network.subset$strahler[1]==1)
     {
 
-        subbasin.subset <- subbasin[subbasin$name %in% network.subset$name]
+        subbasin.subset <- subbasin[network.subset, on="name"]
+ #           system.time(subbasin[subbasin$name %in% network.subset$name,])
+
+
+  #      system.time(subbasin[network.subset, on="name"])
+        
     } else
     {
-        for(ii in distinct(network.subset[,1]))
+        for(ii in unique(network.subset[,name]))
         {
-            upstr <- network.subset[name==ii,2]
-            affl <- subbasin[subbasin$name %in% upstr,1,sum(effluent)]
-            subbasin.affluent[[ii]] <- subbasin$affluent[subbasin$name==ii] <- affl$sum)
+            upstr <- network.subset[name==ii,upstream]
+            affl <- subbasin[subbasin$name %in% upstr,sum(effluent)]
+            subbasin.affluent[[ii]]  <- data.frame(name=ii,affluent=affl)
+#        subbasin.affluent[[ii]] <- subbasin$affluent[subbasin$name==ii]
         }
         subbasin.subset <- do.call("rbind",subbasin.affluent)
     }
