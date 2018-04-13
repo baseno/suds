@@ -25,7 +25,7 @@ gatherAffluentStrahler <- function(network.subset, subbasin)
         {
             upstr <- network.subset[name==ii,upstream]
             affl <- subbasin[subbasin$name %in% upstr,sum(effluent)]
-            subbasin.affluent[[ii]]  <- data.frame(name=ii,affluent=affl)
+            subbasin.affluent[[ii]]  <- subbasin[name==ii,affluent:=affl]
 #        subbasin.affluent[[ii]] <- subbasin$affluent[subbasin$name==ii]
         }
         subbasin.subset <- do.call("rbind",subbasin.affluent)
