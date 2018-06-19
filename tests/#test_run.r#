@@ -19,8 +19,8 @@ I0 <- I0[70:100,]
 list.str <- network %>% distinct(strahler) %>% pull %>% sort
 subbasin_out <- subbasin.template
 
-
-
+dti=1
+str=list.str[1]
 for(dti in seq(1,nrow(I0)))
 {
     subbasin_out <- mutate(subbasin_out,i=slice(I0,dti) %>% pull(value))
@@ -33,7 +33,6 @@ for(dti in seq(1,nrow(I0)))
         k=k+1
     #    str <- str+1
         network.subset <- network %>% filter(strahler==str)
-
         subbasin <- gatherAffluentStrahler(network.subset,subbasin)
         runoff <- lossModel(subbasin)
         subbasin <- updateSubbasinAfterLossModel(subbasin,runoff)
@@ -52,7 +51,7 @@ for(dti in seq(1,nrow(I0)))
         s.list[[k]] <- structure %>% mutate(dt=dti)
         subbasin <- updateSubbasinAfterStructure(subbasin,structure)
 
-        subbasin <- computeEffluent(subbasin)
+        subbasin <- computeEffluent(runoff,pipe,structure,subbasin)
 
         anti_subbasin <- anti_join(subbasin_out,subbasin,by="name")
 

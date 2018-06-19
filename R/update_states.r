@@ -28,30 +28,6 @@ gatherAffluentStrahler <- function(network.subset, subbasin)
     return(subbasin.subset)
 }
 
-#' compute basin's effluent from all surface processes
-#' @return subbasin
-#' @param runoff includes volume, runoff_in and runoff_out in subbasin
-#' @param pipe includes volume, qin and qout in pipe
-#' @param structure includes volume, qin and qout in structure
-#' @param subbasin
-#' @export
-computeEffluent <- function(runoff, pipe, structure, subbasin)
-{
-
-    
-    subbasin <- left_join(subbasin,select(runoff,name,runoff_out),by="name") %>%
-        rename(runoff=runoff_out)
-
-#    pipe <- routePipe(subbasin,pipe)
-    subbasin <- left_join(subbasin,select(pipe,name,Qout),by="name") %>%
-        rename(pipe_out=Qout)
-
-#    structure <- routeStructure(subbasin,structure)
-    subbasin <- left_join(subbasin,select(structure,name,Qin,Qout,Qoverflow,V),by="name") %>%
-        rename(str_in=Qin,str_out=Qout,str_over=Qoverflow,str_v=V)
-    return(subbasin)
-}
-
 #' compute effective runoff with loss model
 #' @return runoff
 #' @param subbasin is the global dataframe including rainfall intensity
@@ -112,6 +88,7 @@ routeRunoff <- function(subbasin)
     return(runoff)
 }
 
+
 #' update subbasin dataframe after runoff was routed
 #' @return subbasin.updated
 #' @param subbasin
@@ -141,6 +118,7 @@ routePipe <- function(subbasin)
 
     return(pipe)
 }
+
 
 #' update subbasin after pipe routing
 #' @return subbasin.updated
@@ -184,6 +162,27 @@ updateSubbasinAfterStructure <- function(subbasin,structure)
 
     return(subbasin.updated)
 }
+
+
+
+
+#' compute basin's effluent from all surface processes
+#' @return subbasin.effl
+#' @param subbasin is the subbasin state after structure update
+#' @export
+computeEffluent <- function(subbasin)
+{
+
+    subbasin.effl=subbasin %>%
+        mutate(effluent=runoff.out+pipe.Qout+structure.Qoverflow+structure.Qout)
+
+    return(subbasin.effl)
+}
+
+
+
+
+
 
 
 
