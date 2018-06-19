@@ -50,7 +50,7 @@ lossModel <- function(subbasin)
     } else ## in case it rains...
     {
         runoff <- runoff %>%
-            mutate(runoff_in=ifelse(hi > r,0,0.001*area*(r-hi)*c.factor), ## generate runoff in case the soil compartment is full (this should be replaced by green ampt...)
+            mutate(runoff_in=ifelse(hi > r,0,0.001*area*(r-hi)*c.factor/dt), ## generate runoff in case the soil compartment is full (this should be replaced by green ampt...)
                    hi=ifelse(hi > r,hi-r,0)) %>% ## fill the soil compartment until it is totally full, ie hi=0
             select(name,runoff_in,hi)
     }

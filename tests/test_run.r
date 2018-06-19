@@ -1,6 +1,7 @@
 setwd("/home/delgado/proj/suds")
 source("./R/prepare_initial_states.r")
 
+
 require(suds)
 require(hydraulics)
 
@@ -11,7 +12,7 @@ r.list <- list()
 p.list <- list()
 s.list <- list()
 sb.list <- list()
-I0 <- I0[70:100,]
+I0 <- I0[70:200,]
 
 
 #dti=I0$dt[2]
