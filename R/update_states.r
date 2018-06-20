@@ -1,9 +1,10 @@
 #' main loop
 #' @return list of runoff, pipe and structure tbl
-#' @param subbasin_out
+#' @param subbasin_initial
 #' @export
-loop <- function(subbasin_out,I0,list.str)
+loop <- function(subbasin_initial,I0,list.str)
 {
+    subbasin_out <- subbasin_initial
     for(dti in seq(1,nrow(I0)))
     {
         subbasin_out <- mutate(subbasin_out,i=slice(I0,dti) %>% pull(value))
