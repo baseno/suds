@@ -60,12 +60,5 @@ subbasin.template <- subbasin
 ##### define network
 
 strahler <- read.table(paste0(input.data,"/strahler.proposta"),header=T,sep="\t")
-updown <- select(strahler, subbacia,flows_to) %>% rename(upstream=subbacia,downstream=flows_to)
-
-network <- updown2idup(updown) %>%
-    filter(id>0) %>%
-    rename(subbacia=id) %>%
-    left_join(.,select(strahler,subbacia,strahler)) %>%
-    rename(name=subbacia)
 
 

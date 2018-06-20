@@ -2,8 +2,17 @@
 #' @return list of runoff, pipe and structure tbl
 #' @param subbasin_initial
 #' @export
-loop <- function(subbasin_initial,I0,list.str)
+loop <- function(subbasin_initial,I0,strahler)
 {
+    updown <- select(strahler, subbacia,flows_to) %>% rename(upstream=subbacia,downstream=flows_to)
+    network <- updown2idup(updown) %>%
+        filter(id>0) %>%
+        rename(subbacia=id) %>%
+        left_join(.,select(strahler,subbacia,strahler)) %>%
+        rename(name=subbacia)
+
+    list.str <- network %>% distinct(strahler) %>% pull %>% sort
+    k <- 0
     r.list <- list()
     p.list <- list()
     s.list <- list()
@@ -15,13 +24,14 @@ loop <- function(subbasin_initial,I0,list.str)
         subbasin_out <- mutate(subbasin_out,i=slice(I0,dti) %>% pull(value))
         cat("date: ",dti,"\n","nrows of subbasin: ",nrow(subbasin_out),"\n")
         
-        for(str in list.str)
+        for(stra in list.str)
         {
+            cat("date: ",dti,"\n","nrows of subbasin: ",nrow(subbasin_out),"\n","strahler number: ",stra,"\n")
             
             subbasin <- subbasin_out
             k=k+1
-            network.subset <- network %>% filter(strahler==str)
-            
+            network.subset <- network %>% filter(strahler==stra)
+            cat(network.subset$strahler[1],"\n")
             subbasin <- gatherAffluentStrahler(network.subset,subbasin)
             runoff <- lossModel(subbasin)
             subbasin <- updateSubbasinAfterLossModel(subbasin,runoff)
@@ -75,7 +85,6 @@ gatherAffluentStrahler <- function(network.subset, subbasin)
     subbasin.affluent <- list()
     if(network.subset$strahler[1]==1)
     {
-
         subbasin.subset <- subbasin %>% filter(name %in% pull(network.subset,name))
     } else
     {

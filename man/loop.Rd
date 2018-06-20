@@ -4,7 +4,7 @@
 \alias{loop}
 \title{main loop}
 \usage{
-loop(subbasin_initial, I0, list.str)
+loop(subbasin_initial, I0, strahler)
 }
 \value{
 list of runoff, pipe and structure tbl
