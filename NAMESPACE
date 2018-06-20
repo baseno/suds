@@ -2,7 +2,7 @@
 
 export(computeEffluent)
 export(gatherAffluentStrahler)
-export(loopTime)
+export(loop)
 export(lossModel)
 export(makeSummary)
 export(routePipe)

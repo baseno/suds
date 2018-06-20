@@ -4,17 +4,13 @@
 \alias{computeEffluent}
 \title{compute basin's effluent from all surface processes}
 \usage{
-computeEffluent(runoff, pipe, structure, subbasin)
+computeEffluent(subbasin)
 }
 \arguments{
-\item{runoff}{includes volume, runoff_in and runoff_out in subbasin}
-
-\item{pipe}{includes volume, qin and qout in pipe}
-
-\item{structure}{includes volume, qin and qout in structure}
+\item{subbasin}{is the subbasin state after structure update}
 }
 \value{
-subbasin
+subbasin.effl
 }
 \description{
 compute basin's effluent from all surface processes
