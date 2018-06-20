@@ -1,0 +1,57 @@
+setwd("/home/delgado/proj/suds")
+source("./R/initial_states_existente.r")
+
+
+require(suds)
+require(hydraulics)
+
+k <- 0
+r.list <- list()
+p.list <- list()
+s.list <- list()
+sb.list <- list()
+I0 <- I0[0:200,]
+
+list.str <- network %>% distinct(strahler) %>% pull %>% sort
+subbasin_out <- subbasin.template
+
+for(dti in seq(1,nrow(I0)))
+{
+    subbasin_out <- mutate(subbasin_out,i=slice(I0,dti) %>% pull(value))
+    cat("date: ",dti,"\n","nrows of subbasin: ",nrow(subbasin_out),"\n")
+
+    for(str in list.str)
+    {
+
+        subbasin <- subbasin_out
+        k=k+1
+        network.subset <- network %>% filter(strahler==str)
+
+        subbasin <- gatherAffluentStrahler(network.subset,subbasin)
+        runoff <- lossModel(subbasin)
+        subbasin <- updateSubbasinAfterLossModel(subbasin,runoff)
+        
+        runoff <- routeRunoff(subbasin)
+        r.list[[k]] <- runoff %>% mutate(dt=dti)
+        subbasin <- updateSubbasinAfterRunoff(subbasin,runoff)
+        
+        pipe <-  routePipe(subbasin)
+        p.list[[k]] <- pipe %>% mutate(dt=dti)
+        subbasin <- updateSubbasinAfterPipe(subbasin,pipe)       
+        
+        structure <-  routeStructure(subbasin)
+        s.list[[k]] <- structure %>% mutate(dt=dti)
+        subbasin <- updateSubbasinAfterStructure(subbasin,structure)
+
+        subbasin <- computeEffluent(subbasin)
+
+        anti_subbasin <- anti_join(subbasin_out,subbasin,by="name")
+
+        subbasin_out <- bind_rows(subbasin,anti_subbasin)        
+    }
+}
+
+runoff <- do.call("rbind",r.list)
+pipe <- do.call("rbind",p.list)
+structure <- do.call("rbind",s.list)
+

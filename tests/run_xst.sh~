@@ -1,0 +1,5 @@
+#!/bin/bash
+
+exec 1> run_existente.log 2>&1
+
+Rscript ./run_existente.r

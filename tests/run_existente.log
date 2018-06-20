@@ -1,0 +1,44 @@
+Loading required package: lubridate
+Loading required package: methods
+
+Attaching package: ‘lubridate’
+
+The following object is masked from ‘package:base’:
+
+    date
+
+Loading required package: dplyr
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:lubridate’:
+
+    intersect, setdiff, union
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Loading required package: wasa.ops
+Loading required package: hydraulics
+Joining, by = "id"
+Joining, by = "subbacia"
+Loading required package: suds
+date:  1 
+ nrows of subbasin:  66 
+date:  2 
+ nrows of subbasin:  66 
+date:  3 
+ nrows of subbasin:  66 
+date:  4 
+ nrows of subbasin:  66 
+date:  5 
+ nrows of subbasin:  66 
+date:  6 
+ nrows of subbasin:  66 
+
+Execution halted

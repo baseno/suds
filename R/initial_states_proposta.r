@@ -43,14 +43,14 @@ subbasin <- readRDS(paste0(input.data,"/parm_sb.rds")) %>%
     mutate(step=step) %>%
     rename(L=longest_path,S=av_slope) %>%
     mutate(volume_lago=ifelse(is.na(volume_lago),0,volume_lago)) %>% ## editing retention structures
+    mutate(Qoutmax=ifelse(volume_lago==0,0,0.005)) %>%  ### set Qoutmax for lakes
     rename(name=subbacia) %>%
-    left_join(.,select(losses.sb,name,initial.existente,permanent.existente),by="name") %>%
-    rename(hi.max=initial.existente,he=permanent.existente) %>%
+    left_join(.,select(losses.sb,name,initial.proposta,permanent.proposta),by="name") %>%
+    rename(hi.max=initial.proposta,he=permanent.proposta) %>%
     mutate(hi=hi.max) %>%
     mutate(X=0.2) %>%### muskingum
     mutate(affluent=0,effluent=0) %>%
     mutate(c.factor=c_existente) %>%
-    mutate(Qoutmax=0,volume_lago=0) %>%  ### only for existente!!!
     mutate(pipe.V=0,pipe.Qin=0,pipe.Qout=0) %>% ## state variables
     mutate(runoff.V=0,runoff=0,runoff.out=0) %>% ## state variables
     mutate(structure.V=0,structure.Qin=0,structure.Qout=0,structure.Qoverflow=0) ## state variables
@@ -59,7 +59,7 @@ subbasin.template <- subbasin
 
 ##### define network
 
-strahler <- read.table(paste0(input.data,"/strahler.existente"),header=T,sep="\t")
+strahler <- read.table(paste0(input.data,"/strahler.proposta"),header=T,sep="\t")
 updown <- select(strahler, subbacia,flows_to) %>% rename(upstream=subbacia,downstream=flows_to)
 
 network <- updown2idup(updown) %>%
