@@ -15,9 +15,9 @@ I0 <- I0[0:200,]
 list.str <- network %>% distinct(strahler) %>% pull %>% sort
 subbasin_out <- subbasin.template
 
-source("./R/loop.r")
+l.rps <- loop(subbasin_out,I0,list.str)
 
-runoff <- do.call("rbind",r.list) %>% saveRDS(.,"./tests/runoff_existente.rds")
-pipe <- do.call("rbind",p.list) %>% saveRDS(.,"./tests/pipe_existente.rds")
-structure <- do.call("rbind",s.list) %>% saveRDS(.,"./tests/structure_existente.rds")
+runoff <- l.rps[[1]] %>% saveRDS(.,"./tests/runoff_existente.rds")
+pipe <- l.rps[[2]] %>% saveRDS(.,"./tests/pipe_existente.rds")
+structure <- l.rps[[3]] %>% saveRDS(.,"./tests/structure_existente.rds")
 
