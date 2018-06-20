@@ -38,6 +38,7 @@ loop <- function(subbasin_initial,I0,strahler)
             
             runoff <- routeRunoff(subbasin) %>% mutate(dt=dti)
             subbasin <- updateSubbasinAfterRunoff(subbasin,runoff)
+
             runoff <-  runoff %>%
                 mutate(datetime=I0$dt[dti]) %>%
                 select(-dt)
@@ -63,14 +64,20 @@ loop <- function(subbasin_initial,I0,strahler)
             
             anti_subbasin <- anti_join(subbasin_out,subbasin,by="name")
             
-            subbasin_out <- bind_rows(subbasin,anti_subbasin)        
+            subbasin_out <- bind_rows(subbasin,anti_subbasin)
+            
         }
+        
+        sb.list[[k]] <- subbasin_out %>%
+            mutate(datetime=I0$dt[dti])
     }
 
     r <- do.call("rbind",r.list)
     p <- do.call("rbind",p.list)
     s <- do.call("rbind",s.list)
-    return(list(r,p,s))
+    sb <- do.call("rbind",sb.list)
+
+    return(list(r,p,s,sb))
     
 }
 
@@ -111,8 +118,8 @@ lossModel <- function(subbasin)
 
     r <- I*dt/3600
     
-    runoff <- select(subbasin,name,hi,he,hi.max,area,c.factor,L,n,S)    
-
+    runoff <- select(subbasin,name,hi,he,hi.max,area,c.factor)
+    
     if(r==0) ## in case it does not rain...
     {
         runoff <- runoff %>%
@@ -152,9 +159,17 @@ updateSubbasinAfterLossModel <- function(subbasin,runoff)
 #' @export
 routeRunoff <- function(subbasin)
 {
-    runoff <- select(subbasin,name,runoff,runoff.V,area,c.factor,L,n,i,S) %>%
-        mutate(runoff_out=runoff,V=runoff.V) %>% ## still need to route runoff
-        select(name,runoff,runoff_out,V)
+    runoff <- select(subbasin,name,runoff,runoff.V,Ksubbacia,X,step) %>%
+        mutate(Qin=runoff,V=0,Qout=0) %>%
+        rename(Vprevious=runoff.V,K=Ksubbacia,dt=step) %>%
+        Q_muskingum %>%
+        V_muskingum %>%
+        select(name,Qin,Qout,V)
+
+
+#    runoff <- select(subbasin,name,runoff,runoff.V,area,c.factor,L,n,i,S) %>%
+ #       mutate(runoff_out=runoff,V=runoff.V) %>% ## still need to route runoff
+  #      select(name,runoff,runoff_out,V)
 
 
     return(runoff)
@@ -168,8 +183,8 @@ routeRunoff <- function(subbasin)
 #' @export
 updateSubbasinAfterRunoff <- function(subbasin,runoff)
 {
-    subbasin.updated <- left_join(select(subbasin,-runoff.V,-runoff,-runoff.out),select(runoff,name,V,runoff,runoff_out),by="name") %>%
-        rename(runoff.V=V,runoff.out=runoff_out)
+    subbasin.updated <- left_join(select(subbasin,-runoff.V,-runoff,-runoff.out),select(runoff,name,V,Qout,Qin),by="name") %>%
+        rename(runoff.V=V,runoff.out=Qout,runoff=Qin)
 
     return(subbasin.updated)
 }
