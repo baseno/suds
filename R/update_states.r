@@ -4,6 +4,11 @@
 #' @export
 loop <- function(subbasin_initial,I0,list.str)
 {
+    r.list <- list()
+    p.list <- list()
+    s.list <- list()
+    sb.list <- list()
+
     subbasin_out <- subbasin_initial
     for(dti in seq(1,nrow(I0)))
     {
@@ -21,24 +26,27 @@ loop <- function(subbasin_initial,I0,list.str)
             runoff <- lossModel(subbasin)
             subbasin <- updateSubbasinAfterLossModel(subbasin,runoff)
             
-            runoff <- routeRunoff(subbasin)
-            r.list[[k]] <- runoff %>% mutate(dt=dti)
+            runoff <- routeRunoff(subbasin) %>% mutate(dt=dti)
             subbasin <- updateSubbasinAfterRunoff(subbasin,runoff)
             runoff <-  runoff %>%
-                mutate(datetime=I0$dt[dti])
+                mutate(datetime=I0$dt[dti]) %>%
+                select(-dt)
+            r.list[[k]] <- runoff
         
-            pipe <-  routePipe(subbasin)
-            p.list[[k]] <- pipe %>% mutate(dt=dti)
+            pipe <-  routePipe(subbasin) %>% mutate(dt=dti)
             subbasin <- updateSubbasinAfterPipe(subbasin,pipe)
             pipe <-  pipe %>%
-                mutate(datetime=I0$dt[dti])
+                mutate(datetime=I0$dt[dti]) %>%
+                select(-dt)
+            p.list[[k]] <- pipe
+
             
-            
-            structure <-  routeStructure(subbasin)
-            s.list[[k]] <- structure %>% mutate(dt=dti)
+            structure <- routeStructure(subbasin) %>% mutate(dt=dti)
             subbasin <- updateSubbasinAfterStructure(subbasin,structure)
             structure <-  structure %>%
-                mutate(datetime=I0$dt[dti])
+                mutate(datetime=I0$dt[dti]) %>%
+                select(-dt)
+            s.list[[k]] <- structure
             
             
             subbasin <- computeEffluent(subbasin)

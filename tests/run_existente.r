@@ -6,10 +6,6 @@ require(suds)
 require(hydraulics)
 
 k <- 0
-r.list <- list()
-p.list <- list()
-s.list <- list()
-sb.list <- list()
 I0 <- I0[0:200,]
 
 list.str <- network %>% distinct(strahler) %>% pull %>% sort
