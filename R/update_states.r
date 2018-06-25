@@ -82,6 +82,71 @@ loop <- function(subbasin_initial,I0,strahler)
 }
 
 
+#' main loop runoff only
+#' @return list of runoff, pipe and structure tbl
+#' @param subbasin_initial
+#' @export
+loop_runoff <- function(subbasin_initial,I0,strahler)
+{
+    updown <- select(strahler, subbacia,flows_to) %>% rename(upstream=subbacia,downstream=flows_to)
+    network <- updown2idup(updown) %>%
+        filter(id>0) %>%
+        rename(subbacia=id) %>%
+        left_join(.,select(strahler,subbacia,strahler)) %>%
+        rename(name=subbacia)
+
+    list.str <- network %>% distinct(strahler) %>% pull %>% sort
+    k <- 0
+    r.list <- list()
+    sb.list <- list()
+
+    subbasin_out <- subbasin_initial
+    for(dti in seq(1,nrow(I0)))
+    {
+        subbasin_out <- mutate(subbasin_out,i=slice(I0,dti) %>% pull(value))
+        cat("date: ",dti,"\n","nrows of subbasin: ",nrow(subbasin_out),"\n")
+        
+        for(stra in list.str)
+        {
+            cat("date: ",dti,"\n","nrows of subbasin: ",nrow(subbasin_out),"\n","strahler number: ",stra,"\n")
+            
+            subbasin <- subbasin_out
+            k=k+1
+            network.subset <- network %>% filter(strahler==stra)
+            cat(network.subset$strahler[1],"\n")
+            subbasin <- gatherAffluentStrahler(network.subset,subbasin)
+            runoff <- lossModel(subbasin)
+            subbasin <- updateSubbasinAfterLossModel(subbasin,runoff)
+            
+            runoff <- routeRunoff(subbasin) %>% mutate(dt=dti)
+            subbasin <- updateSubbasinAfterRunoff(subbasin,runoff)
+
+            runoff <-  runoff %>%
+                mutate(datetime=I0$dt[dti]) %>%
+                select(-dt)
+            r.list[[k]] <- runoff
+                    
+            
+            subbasin <- computeEffluent(subbasin)
+            
+            anti_subbasin <- anti_join(subbasin_out,subbasin,by="name")
+            
+            subbasin_out <- bind_rows(subbasin,anti_subbasin)
+            
+        }
+        
+        sb.list[[k]] <- subbasin_out %>%
+            mutate(datetime=I0$dt[dti])
+    }
+
+    r <- do.call("rbind",r.list)
+    sb <- do.call("rbind",sb.list)
+
+    return(list(r,sb))
+    
+}
+
+
 #' gather upstream affluent, only one strahler order can be given, should loop through  strahler in main loop
 #' @return subbasin
 #' @param subbasin
@@ -197,7 +262,7 @@ updateSubbasinAfterRunoff <- function(subbasin,runoff)
 routePipe <- function(subbasin)
 {
     pipe <- select(subbasin,name,affluent,runoff.out,pipe.V,Kpipe,X,step) %>%
-        mutate(Qin=affluent+runoff.out,V=0,Qout=0) %>%
+        mutate(Qin=ifelse(length_colector==0,0,affluent+runoff.out),V=0,Qout=0) %>%
         rename(Vprevious=pipe.V,K=Kpipe,dt=step) %>%
         Q_muskingum %>%
         V_muskingum %>%
@@ -227,7 +292,7 @@ updateSubbasinAfterPipe <- function(subbasin,pipe)
 routeStructure <- function(subbasin)
 {
     structure <- select(subbasin,name,pipe.Qout,structure.Qoverflow,structure.V,Qoutmax,volume_lago,step) %>%
-        mutate(Qin=pipe.Qout,Vprevious=structure.V,Qout=0) %>%
+        mutate(Qin=ifelse(volume_lago==0,0,pipe.Qout),Vprevious=structure.V,Qout=0) %>%
         rename(dt=step,Vmax=volume_lago,Qoverflow=structure.Qoverflow,V=structure.V) %>%
         Virtual_retention %>%
         Qoverflow_ret_str %>%
@@ -260,10 +325,18 @@ updateSubbasinAfterStructure <- function(subbasin,structure)
 computeEffluent <- function(subbasin)
 {
 
-    subbasin.effl=subbasin %>%
-        mutate(effluent=runoff.out+pipe.Qout+structure.Qoverflow+structure.Qout)
+    subbasin.effl.structure=subbasin %>% filter(volume_lago>0) %>%
+        mutate(effluent=structure.Qoverflow+structure.Qout)
 
-    return(subbasin.effl)
+    subbasin.effl.pipe=subbasin %>% filter(length_colector>0 & volume_lago==0) %>%
+        mutate(effluent=pipe.Qout)
+
+    subbasin.effl.runoff=subbasin %>% filter(length_colector==0 & volume_lago==0) %>%
+        mutate(effluent=runoff.out)
+
+
+
+    return(rbind(subbasin.effl.runoff,subbasin.effl.pipe,subbasin.effl.structure))
 }
 
 

@@ -56,10 +56,6 @@ date:  1
 6 
 date:  1 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  1 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  1 
@@ -94,10 +90,6 @@ date:  2
 6 
 date:  2 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  2 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  2 
@@ -132,10 +124,6 @@ date:  3
 6 
 date:  3 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  3 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  3 
@@ -170,10 +158,6 @@ date:  4
 6 
 date:  4 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  4 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  4 
@@ -208,10 +192,6 @@ date:  5
 6 
 date:  5 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  5 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  5 
@@ -246,10 +226,6 @@ date:  6
 6 
 date:  6 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  6 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  6 
@@ -284,10 +260,6 @@ date:  7
 6 
 date:  7 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  7 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  7 
@@ -322,10 +294,6 @@ date:  8
 6 
 date:  8 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  8 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  8 
@@ -360,10 +328,6 @@ date:  9
 6 
 date:  9 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  9 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  9 
@@ -398,10 +362,6 @@ date:  10
 6 
 date:  10 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  10 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  10 
@@ -436,10 +396,6 @@ date:  11
 6 
 date:  11 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  11 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  11 
@@ -474,10 +430,6 @@ date:  12
 6 
 date:  12 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  12 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  12 
@@ -512,10 +464,6 @@ date:  13
 6 
 date:  13 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  13 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  13 
@@ -550,10 +498,6 @@ date:  14
 6 
 date:  14 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  14 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  14 
@@ -588,10 +532,6 @@ date:  15
 6 
 date:  15 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  15 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  15 
@@ -618,16 +558,12 @@ date:  16
 4 
 date:  16 
  nrows of subbasin:  66 
- strahler number:  5 
+> strahler number:  5
 5 
 date:  16 
  nrows of subbasin:  66 
  strahler number:  6 
 6 
-date:  16 
- nrows of subbasin:  66 
- strahler number:  7 
-7 
 date:  16 
  nrows of subbasin:  66 
  strahler number:  8 
@@ -664,10 +600,6 @@ date:  17
 6 
 date:  17 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  17 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  17 
@@ -702,10 +634,6 @@ date:  18
 6 
 date:  18 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  18 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  18 
@@ -740,10 +668,6 @@ date:  19
 6 
 date:  19 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  19 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  19 
@@ -778,10 +702,6 @@ date:  20
 6 
 date:  20 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  20 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  20 
@@ -816,10 +736,6 @@ date:  21
 6 
 date:  21 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  21 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  21 
@@ -854,10 +770,6 @@ date:  22
 6 
 date:  22 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  22 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  22 
@@ -892,10 +804,6 @@ date:  23
 6 
 date:  23 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  23 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  23 
@@ -930,10 +838,6 @@ date:  24
 6 
 date:  24 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  24 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  24 
@@ -968,10 +872,6 @@ date:  25
 6 
 date:  25 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  25 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  25 
@@ -1006,10 +906,6 @@ date:  26
 6 
 date:  26 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  26 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  26 
@@ -1044,10 +940,6 @@ date:  27
 6 
 date:  27 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  27 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  27 
@@ -1082,10 +974,6 @@ date:  28
 6 
 date:  28 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  28 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  28 
@@ -1120,10 +1008,6 @@ date:  29
 6 
 date:  29 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  29 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  29 
@@ -1158,10 +1042,6 @@ date:  30
 6 
 date:  30 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  30 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  30 
@@ -1196,10 +1076,6 @@ date:  31
 6 
 date:  31 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  31 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  31 
@@ -1234,10 +1110,6 @@ date:  32
 6 
 date:  32 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  32 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  32 
@@ -1272,10 +1144,6 @@ date:  33
 6 
 date:  33 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  33 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  33 
@@ -1310,10 +1178,6 @@ date:  34
 6 
 date:  34 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  34 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  34 
@@ -1348,10 +1212,6 @@ date:  35
 6 
 date:  35 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  35 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  35 
@@ -1386,10 +1246,6 @@ date:  36
 6 
 date:  36 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  36 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  36 
@@ -1424,10 +1280,6 @@ date:  37
 6 
 date:  37 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  37 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  37 
@@ -1462,10 +1314,6 @@ date:  38
 6 
 date:  38 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  38 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  38 
@@ -1500,10 +1348,6 @@ date:  39
 6 
 date:  39 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  39 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  39 
@@ -1538,10 +1382,6 @@ date:  40
 6 
 date:  40 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  40 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  40 
@@ -1576,10 +1416,6 @@ date:  41
 6 
 date:  41 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  41 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  41 
@@ -1614,10 +1450,6 @@ date:  42
 6 
 date:  42 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  42 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  42 
@@ -1652,10 +1484,6 @@ date:  43
 6 
 date:  43 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  43 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  43 
@@ -1690,10 +1518,6 @@ date:  44
 6 
 date:  44 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  44 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  44 
@@ -1728,10 +1552,6 @@ date:  45
 6 
 date:  45 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  45 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  45 
@@ -1766,10 +1586,6 @@ date:  46
 6 
 date:  46 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  46 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  46 
@@ -1804,10 +1620,6 @@ date:  47
 6 
 date:  47 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  47 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  47 
@@ -1842,10 +1654,6 @@ date:  48
 6 
 date:  48 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  48 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  48 
@@ -1880,10 +1688,6 @@ date:  49
 6 
 date:  49 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  49 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  49 
@@ -1918,10 +1722,6 @@ date:  50
 6 
 date:  50 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  50 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  50 
@@ -1956,10 +1756,6 @@ date:  51
 6 
 date:  51 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  51 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  51 
@@ -1994,10 +1790,6 @@ date:  52
 6 
 date:  52 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  52 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  52 
@@ -2032,10 +1824,6 @@ date:  53
 6 
 date:  53 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  53 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  53 
@@ -2070,10 +1858,6 @@ date:  54
 6 
 date:  54 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  54 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  54 
@@ -2108,10 +1892,6 @@ date:  55
 6 
 date:  55 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  55 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  55 
@@ -2146,10 +1926,6 @@ date:  56
 6 
 date:  56 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  56 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  56 
@@ -2184,10 +1960,6 @@ date:  57
 6 
 date:  57 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  57 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  57 
@@ -2222,10 +1994,6 @@ date:  58
 6 
 date:  58 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  58 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  58 
@@ -2260,10 +2028,6 @@ date:  59
 6 
 date:  59 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  59 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  59 
@@ -2298,10 +2062,6 @@ date:  60
 6 
 date:  60 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  60 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  60 
@@ -2336,10 +2096,6 @@ date:  61
 6 
 date:  61 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  61 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  61 
@@ -2374,10 +2130,6 @@ date:  62
 6 
 date:  62 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  62 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  62 
@@ -2412,10 +2164,6 @@ date:  63
 6 
 date:  63 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  63 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  63 
@@ -2450,10 +2198,6 @@ date:  64
 6 
 date:  64 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  64 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  64 
@@ -2488,10 +2232,6 @@ date:  65
 6 
 date:  65 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  65 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  65 
@@ -2526,10 +2266,6 @@ date:  66
 6 
 date:  66 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  66 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  66 
@@ -2564,10 +2300,6 @@ date:  67
 6 
 date:  67 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  67 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  67 
@@ -2602,10 +2334,6 @@ date:  68
 6 
 date:  68 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  68 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  68 
@@ -2640,10 +2368,6 @@ date:  69
 6 
 date:  69 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  69 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  69 
@@ -2678,10 +2402,6 @@ date:  70
 6 
 date:  70 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  70 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  70 
@@ -2716,10 +2436,6 @@ date:  71
 6 
 date:  71 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  71 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  71 
@@ -2754,10 +2470,6 @@ date:  72
 6 
 date:  72 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  72 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  72 
@@ -2792,10 +2504,6 @@ date:  73
 6 
 date:  73 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  73 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  73 
@@ -2830,10 +2538,6 @@ date:  74
 6 
 date:  74 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  74 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  74 
@@ -2868,10 +2572,6 @@ date:  75
 6 
 date:  75 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  75 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  75 
@@ -2906,10 +2606,6 @@ date:  76
 6 
 date:  76 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  76 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  76 
@@ -2944,10 +2640,6 @@ date:  77
 6 
 date:  77 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  77 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  77 
@@ -2982,10 +2674,6 @@ date:  78
 6 
 date:  78 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  78 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  78 
@@ -3020,10 +2708,6 @@ date:  79
 6 
 date:  79 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  79 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  79 
@@ -3058,10 +2742,6 @@ date:  80
 6 
 date:  80 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  80 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  80 
@@ -3096,10 +2776,6 @@ date:  81
 6 
 date:  81 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  81 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  81 
@@ -3134,10 +2810,6 @@ date:  82
 6 
 date:  82 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  82 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  82 
@@ -3172,10 +2844,6 @@ date:  83
 6 
 date:  83 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  83 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  83 
@@ -3210,10 +2878,6 @@ date:  84
 6 
 date:  84 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  84 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  84 
@@ -3248,10 +2912,6 @@ date:  85
 6 
 date:  85 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  85 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  85 
@@ -3286,10 +2946,6 @@ date:  86
 6 
 date:  86 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  86 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  86 
@@ -3324,10 +2980,6 @@ date:  87
 6 
 date:  87 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  87 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  87 
@@ -3362,10 +3014,6 @@ date:  88
 6 
 date:  88 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  88 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  88 
@@ -3400,10 +3048,6 @@ date:  89
 6 
 date:  89 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  89 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  89 
@@ -3438,10 +3082,6 @@ date:  90
 6 
 date:  90 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  90 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  90 
@@ -3476,10 +3116,6 @@ date:  91
 6 
 date:  91 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  91 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  91 
@@ -3514,10 +3150,6 @@ date:  92
 6 
 date:  92 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  92 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  92 
@@ -3552,10 +3184,6 @@ date:  93
 6 
 date:  93 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  93 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  93 
@@ -3590,10 +3218,6 @@ date:  94
 6 
 date:  94 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  94 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  94 
@@ -3628,10 +3252,6 @@ date:  95
 6 
 date:  95 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  95 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  95 
@@ -3666,10 +3286,6 @@ date:  96
 6 
 date:  96 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  96 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  96 
@@ -3704,10 +3320,6 @@ date:  97
 6 
 date:  97 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  97 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  97 
@@ -3742,10 +3354,6 @@ date:  98
 6 
 date:  98 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  98 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  98 
@@ -3780,10 +3388,6 @@ date:  99
 6 
 date:  99 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  99 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  99 
@@ -3818,10 +3422,6 @@ date:  100
 6 
 date:  100 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  100 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  100 
@@ -3856,10 +3456,6 @@ date:  101
 6 
 date:  101 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  101 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  101 
@@ -3894,10 +3490,6 @@ date:  102
 6 
 date:  102 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  102 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  102 
@@ -3932,10 +3524,6 @@ date:  103
 6 
 date:  103 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  103 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  103 
@@ -3970,10 +3558,6 @@ date:  104
 6 
 date:  104 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  104 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  104 
@@ -4008,10 +3592,6 @@ date:  105
 6 
 date:  105 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  105 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  105 
@@ -4046,10 +3626,6 @@ date:  106
 6 
 date:  106 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  106 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  106 
@@ -4084,10 +3660,6 @@ date:  107
 6 
 date:  107 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  107 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  107 
@@ -4122,10 +3694,6 @@ date:  108
 6 
 date:  108 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  108 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  108 
@@ -4160,10 +3728,6 @@ date:  109
 6 
 date:  109 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  109 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  109 
@@ -4198,10 +3762,6 @@ date:  110
 6 
 date:  110 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  110 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  110 
@@ -4236,10 +3796,6 @@ date:  111
 6 
 date:  111 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  111 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  111 
@@ -4274,10 +3830,6 @@ date:  112
 6 
 date:  112 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  112 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  112 
@@ -4312,10 +3864,6 @@ date:  113
 6 
 date:  113 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  113 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  113 
@@ -4350,10 +3898,6 @@ date:  114
 6 
 date:  114 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  114 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  114 
@@ -4388,10 +3932,6 @@ date:  115
 6 
 date:  115 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  115 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  115 
@@ -4426,10 +3966,6 @@ date:  116
 6 
 date:  116 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  116 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  116 
@@ -4464,10 +4000,6 @@ date:  117
 6 
 date:  117 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  117 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  117 
@@ -4502,10 +4034,6 @@ date:  118
 6 
 date:  118 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  118 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  118 
@@ -4540,10 +4068,6 @@ date:  119
 6 
 date:  119 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  119 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  119 
@@ -4578,10 +4102,6 @@ date:  120
 6 
 date:  120 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  120 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  120 
@@ -4616,10 +4136,6 @@ date:  121
 6 
 date:  121 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  121 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  121 
@@ -4654,10 +4170,6 @@ date:  122
 6 
 date:  122 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  122 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  122 
@@ -4692,10 +4204,6 @@ date:  123
 6 
 date:  123 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  123 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  123 
@@ -4730,10 +4238,6 @@ date:  124
 6 
 date:  124 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  124 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  124 
@@ -4768,10 +4272,6 @@ date:  125
 6 
 date:  125 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  125 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  125 
@@ -4806,10 +4306,6 @@ date:  126
 6 
 date:  126 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  126 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  126 
@@ -4844,10 +4340,6 @@ date:  127
 6 
 date:  127 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  127 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  127 
@@ -4882,10 +4374,6 @@ date:  128
 6 
 date:  128 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  128 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  128 
@@ -4920,10 +4408,6 @@ date:  129
 6 
 date:  129 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  129 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  129 
@@ -4958,10 +4442,6 @@ date:  130
 6 
 date:  130 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  130 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  130 
@@ -4996,10 +4476,6 @@ date:  131
 6 
 date:  131 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  131 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  131 
@@ -5034,10 +4510,6 @@ date:  132
 6 
 date:  132 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  132 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  132 
@@ -5072,10 +4544,6 @@ date:  133
 6 
 date:  133 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  133 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  133 
@@ -5110,10 +4578,6 @@ date:  134
 6 
 date:  134 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  134 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  134 
@@ -5148,10 +4612,6 @@ date:  135
 6 
 date:  135 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  135 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  135 
@@ -5186,10 +4646,6 @@ date:  136
 6 
 date:  136 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  136 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  136 
@@ -5224,10 +4680,6 @@ date:  137
 6 
 date:  137 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  137 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  137 
@@ -5262,10 +4714,6 @@ date:  138
 6 
 date:  138 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  138 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  138 
@@ -5300,10 +4748,6 @@ date:  139
 6 
 date:  139 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  139 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  139 
@@ -5338,10 +4782,6 @@ date:  140
 6 
 date:  140 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  140 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  140 
@@ -5376,10 +4816,6 @@ date:  141
 6 
 date:  141 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  141 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  141 
@@ -5414,10 +4850,6 @@ date:  142
 6 
 date:  142 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  142 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  142 
@@ -5452,10 +4884,6 @@ date:  143
 6 
 date:  143 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  143 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  143 
@@ -5490,10 +4918,6 @@ date:  144
 6 
 date:  144 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  144 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  144 
@@ -5528,10 +4952,6 @@ date:  145
 6 
 date:  145 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  145 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  145 
@@ -5566,10 +4986,6 @@ date:  146
 6 
 date:  146 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  146 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  146 
@@ -5604,10 +5020,6 @@ date:  147
 6 
 date:  147 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  147 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  147 
@@ -5642,10 +5054,6 @@ date:  148
 6 
 date:  148 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  148 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  148 
@@ -5680,10 +5088,6 @@ date:  149
 6 
 date:  149 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  149 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  149 
@@ -5718,10 +5122,6 @@ date:  150
 6 
 date:  150 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  150 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  150 
@@ -5756,10 +5156,6 @@ date:  151
 6 
 date:  151 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  151 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  151 
@@ -5794,10 +5190,6 @@ date:  152
 6 
 date:  152 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  152 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  152 
@@ -5832,10 +5224,6 @@ date:  153
 6 
 date:  153 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  153 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  153 
@@ -5870,10 +5258,6 @@ date:  154
 6 
 date:  154 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  154 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  154 
@@ -5908,10 +5292,6 @@ date:  155
 6 
 date:  155 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  155 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  155 
@@ -5946,10 +5326,6 @@ date:  156
 6 
 date:  156 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  156 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  156 
@@ -5984,10 +5360,6 @@ date:  157
 6 
 date:  157 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  157 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  157 
@@ -6022,10 +5394,6 @@ date:  158
 6 
 date:  158 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  158 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  158 
@@ -6060,10 +5428,6 @@ date:  159
 6 
 date:  159 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  159 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  159 
@@ -6098,10 +5462,6 @@ date:  160
 6 
 date:  160 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  160 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  160 
@@ -6136,10 +5496,6 @@ date:  161
 6 
 date:  161 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  161 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  161 
@@ -6174,10 +5530,6 @@ date:  162
 6 
 date:  162 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  162 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  162 
@@ -6212,10 +5564,6 @@ date:  163
 6 
 date:  163 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  163 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  163 
@@ -6250,10 +5598,6 @@ date:  164
 6 
 date:  164 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  164 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  164 
@@ -6288,10 +5632,6 @@ date:  165
 6 
 date:  165 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  165 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  165 
@@ -6326,10 +5666,6 @@ date:  166
 6 
 date:  166 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  166 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  166 
@@ -6364,10 +5700,6 @@ date:  167
 6 
 date:  167 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  167 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  167 
@@ -6402,10 +5734,6 @@ date:  168
 6 
 date:  168 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  168 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  168 
@@ -6440,10 +5768,6 @@ date:  169
 6 
 date:  169 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  169 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  169 
@@ -6478,10 +5802,6 @@ date:  170
 6 
 date:  170 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  170 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  170 
@@ -6516,10 +5836,6 @@ date:  171
 6 
 date:  171 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  171 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  171 
@@ -6554,10 +5870,6 @@ date:  172
 6 
 date:  172 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  172 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  172 
@@ -6592,10 +5904,6 @@ date:  173
 6 
 date:  173 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  173 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  173 
@@ -6630,10 +5938,6 @@ date:  174
 6 
 date:  174 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  174 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  174 
@@ -6668,10 +5972,6 @@ date:  175
 6 
 date:  175 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  175 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  175 
@@ -6706,10 +6006,6 @@ date:  176
 6 
 date:  176 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  176 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  176 
@@ -6744,10 +6040,6 @@ date:  177
 6 
 date:  177 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  177 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  177 
@@ -6782,10 +6074,6 @@ date:  178
 6 
 date:  178 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  178 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  178 
@@ -6820,10 +6108,6 @@ date:  179
 6 
 date:  179 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  179 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  179 
@@ -6858,10 +6142,6 @@ date:  180
 6 
 date:  180 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  180 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  180 
@@ -6896,10 +6176,6 @@ date:  181
 6 
 date:  181 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  181 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  181 
@@ -6934,10 +6210,6 @@ date:  182
 6 
 date:  182 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  182 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  182 
@@ -6972,10 +6244,6 @@ date:  183
 6 
 date:  183 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  183 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  183 
@@ -7010,10 +6278,6 @@ date:  184
 6 
 date:  184 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  184 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  184 
@@ -7048,10 +6312,6 @@ date:  185
 6 
 date:  185 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  185 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  185 
@@ -7086,10 +6346,6 @@ date:  186
 6 
 date:  186 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  186 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  186 
@@ -7124,10 +6380,6 @@ date:  187
 6 
 date:  187 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  187 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  187 
@@ -7162,10 +6414,6 @@ date:  188
 6 
 date:  188 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  188 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  188 
@@ -7200,10 +6448,6 @@ date:  189
 6 
 date:  189 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  189 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  189 
@@ -7238,10 +6482,6 @@ date:  190
 6 
 date:  190 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  190 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  190 
@@ -7276,10 +6516,6 @@ date:  191
 6 
 date:  191 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  191 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  191 
@@ -7314,10 +6550,6 @@ date:  192
 6 
 date:  192 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  192 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  192 
@@ -7352,10 +6584,6 @@ date:  193
 6 
 date:  193 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  193 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  193 
@@ -7390,10 +6618,6 @@ date:  194
 6 
 date:  194 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  194 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  194 
@@ -7428,10 +6652,6 @@ date:  195
 6 
 date:  195 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  195 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  195 
@@ -7466,10 +6686,6 @@ date:  196
 6 
 date:  196 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  196 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  196 
@@ -7504,10 +6720,6 @@ date:  197
 6 
 date:  197 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  197 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  197 
@@ -7542,10 +6754,6 @@ date:  198
 6 
 date:  198 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  198 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  198 
@@ -7580,10 +6788,6 @@ date:  199
 6 
 date:  199 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  199 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  199 
@@ -7618,10 +6822,6 @@ date:  200
 6 
 date:  200 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  200 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  200 
@@ -7656,10 +6856,6 @@ date:  201
 6 
 date:  201 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  201 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  201 
@@ -7694,10 +6890,6 @@ date:  202
 6 
 date:  202 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  202 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  202 
@@ -7732,10 +6924,6 @@ date:  203
 6 
 date:  203 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  203 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  203 
@@ -7770,10 +6958,6 @@ date:  204
 6 
 date:  204 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  204 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  204 
@@ -7808,10 +6992,6 @@ date:  205
 6 
 date:  205 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  205 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  205 
@@ -7846,10 +7026,6 @@ date:  206
 6 
 date:  206 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  206 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  206 
@@ -7884,10 +7060,6 @@ date:  207
 6 
 date:  207 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  207 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  207 
@@ -7922,10 +7094,6 @@ date:  208
 6 
 date:  208 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  208 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  208 
@@ -7960,10 +7128,6 @@ date:  209
 6 
 date:  209 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  209 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  209 
@@ -7998,10 +7162,6 @@ date:  210
 6 
 date:  210 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  210 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  210 
@@ -8036,10 +7196,6 @@ date:  211
 6 
 date:  211 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  211 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  211 
@@ -8074,10 +7230,6 @@ date:  212
 6 
 date:  212 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  212 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  212 
@@ -8112,10 +7264,6 @@ date:  213
 6 
 date:  213 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  213 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  213 
@@ -8150,10 +7298,6 @@ date:  214
 6 
 date:  214 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  214 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  214 
@@ -8188,10 +7332,6 @@ date:  215
 6 
 date:  215 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  215 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  215 
@@ -8226,10 +7366,6 @@ date:  216
 6 
 date:  216 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  216 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  216 
@@ -8264,10 +7400,6 @@ date:  217
 6 
 date:  217 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  217 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  217 
@@ -8302,10 +7434,6 @@ date:  218
 6 
 date:  218 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  218 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  218 
@@ -8340,10 +7468,6 @@ date:  219
 6 
 date:  219 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  219 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  219 
@@ -8378,10 +7502,6 @@ date:  220
 6 
 date:  220 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  220 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  220 
@@ -8416,10 +7536,6 @@ date:  221
 6 
 date:  221 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  221 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  221 
@@ -8454,10 +7570,6 @@ date:  222
 6 
 date:  222 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  222 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  222 
@@ -8492,10 +7604,6 @@ date:  223
 6 
 date:  223 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  223 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  223 
@@ -8530,10 +7638,6 @@ date:  224
 6 
 date:  224 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  224 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  224 
@@ -8568,10 +7672,6 @@ date:  225
 6 
 date:  225 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  225 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  225 
@@ -8606,10 +7706,6 @@ date:  226
 6 
 date:  226 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  226 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  226 
@@ -8644,10 +7740,6 @@ date:  227
 6 
 date:  227 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  227 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  227 
@@ -8682,10 +7774,6 @@ date:  228
 6 
 date:  228 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  228 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  228 
@@ -8720,10 +7808,6 @@ date:  229
 6 
 date:  229 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  229 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  229 
@@ -8758,10 +7842,6 @@ date:  230
 6 
 date:  230 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  230 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  230 
@@ -8796,10 +7876,6 @@ date:  231
 6 
 date:  231 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  231 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  231 
@@ -8834,10 +7910,6 @@ date:  232
 6 
 date:  232 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  232 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  232 
@@ -8872,10 +7944,6 @@ date:  233
 6 
 date:  233 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  233 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  233 
@@ -8910,10 +7978,6 @@ date:  234
 6 
 date:  234 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  234 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  234 
@@ -8948,10 +8012,6 @@ date:  235
 6 
 date:  235 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  235 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  235 
@@ -8986,10 +8046,6 @@ date:  236
 6 
 date:  236 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  236 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  236 
@@ -9024,10 +8080,6 @@ date:  237
 6 
 date:  237 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  237 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  237 
@@ -9062,10 +8114,6 @@ date:  238
 6 
 date:  238 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  238 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  238 
@@ -9100,10 +8148,6 @@ date:  239
 6 
 date:  239 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  239 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  239 
@@ -9138,10 +8182,6 @@ date:  240
 6 
 date:  240 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  240 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  240 
@@ -9176,10 +8216,6 @@ date:  241
 6 
 date:  241 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  241 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  241 
@@ -9214,10 +8250,6 @@ date:  242
 6 
 date:  242 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  242 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  242 
@@ -9252,10 +8284,6 @@ date:  243
 6 
 date:  243 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  243 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  243 
@@ -9290,10 +8318,6 @@ date:  244
 6 
 date:  244 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  244 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  244 
@@ -9328,10 +8352,6 @@ date:  245
 6 
 date:  245 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  245 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  245 
@@ -9366,10 +8386,6 @@ date:  246
 6 
 date:  246 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  246 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  246 
@@ -9404,10 +8420,6 @@ date:  247
 6 
 date:  247 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  247 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  247 
@@ -9442,10 +8454,6 @@ date:  248
 6 
 date:  248 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  248 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  248 
@@ -9480,10 +8488,6 @@ date:  249
 6 
 date:  249 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  249 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  249 
@@ -9518,10 +8522,6 @@ date:  250
 6 
 date:  250 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  250 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  250 
@@ -9556,10 +8556,6 @@ date:  251
 6 
 date:  251 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  251 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  251 
@@ -9594,10 +8590,6 @@ date:  252
 6 
 date:  252 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  252 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  252 
@@ -9632,10 +8624,6 @@ date:  253
 6 
 date:  253 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  253 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  253 
@@ -9670,10 +8658,6 @@ date:  254
 6 
 date:  254 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  254 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  254 
@@ -9708,10 +8692,6 @@ date:  255
 6 
 date:  255 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  255 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  255 
@@ -9746,10 +8726,6 @@ date:  256
 6 
 date:  256 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  256 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  256 
@@ -9784,10 +8760,6 @@ date:  257
 6 
 date:  257 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  257 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  257 
@@ -9822,10 +8794,6 @@ date:  258
 6 
 date:  258 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  258 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  258 
@@ -9860,10 +8828,6 @@ date:  259
 6 
 date:  259 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  259 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  259 
@@ -9898,10 +8862,6 @@ date:  260
 6 
 date:  260 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  260 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  260 
@@ -9936,10 +8896,6 @@ date:  261
 6 
 date:  261 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  261 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  261 
@@ -9974,10 +8930,6 @@ date:  262
 6 
 date:  262 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  262 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  262 
@@ -10012,10 +8964,6 @@ date:  263
 6 
 date:  263 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  263 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  263 
@@ -10050,10 +8998,6 @@ date:  264
 6 
 date:  264 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  264 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  264 
@@ -10088,10 +9032,6 @@ date:  265
 6 
 date:  265 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  265 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  265 
@@ -10126,10 +9066,6 @@ date:  266
 6 
 date:  266 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  266 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  266 
@@ -10164,10 +9100,6 @@ date:  267
 6 
 date:  267 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  267 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  267 
@@ -10202,10 +9134,6 @@ date:  268
 6 
 date:  268 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  268 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  268 
@@ -10240,10 +9168,6 @@ date:  269
 6 
 date:  269 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  269 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  269 
@@ -10278,10 +9202,6 @@ date:  270
 6 
 date:  270 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  270 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  270 
@@ -10316,10 +9236,6 @@ date:  271
 6 
 date:  271 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  271 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  271 
@@ -10354,10 +9270,6 @@ date:  272
 6 
 date:  272 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  272 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  272 
@@ -10392,10 +9304,6 @@ date:  273
 6 
 date:  273 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  273 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  273 
@@ -10430,10 +9338,6 @@ date:  274
 6 
 date:  274 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  274 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  274 
@@ -10468,10 +9372,6 @@ date:  275
 6 
 date:  275 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  275 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  275 
@@ -10506,10 +9406,6 @@ date:  276
 6 
 date:  276 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  276 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  276 
@@ -10544,10 +9440,6 @@ date:  277
 6 
 date:  277 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  277 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  277 
@@ -10582,10 +9474,6 @@ date:  278
 6 
 date:  278 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  278 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  278 
@@ -10620,10 +9508,6 @@ date:  279
 6 
 date:  279 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  279 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  279 
@@ -10658,10 +9542,6 @@ date:  280
 6 
 date:  280 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  280 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  280 
@@ -10696,10 +9576,6 @@ date:  281
 6 
 date:  281 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  281 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  281 
@@ -10734,10 +9610,6 @@ date:  282
 6 
 date:  282 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  282 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  282 
@@ -10772,10 +9644,6 @@ date:  283
 6 
 date:  283 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  283 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  283 
@@ -10810,10 +9678,6 @@ date:  284
 6 
 date:  284 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  284 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  284 
@@ -10848,10 +9712,6 @@ date:  285
 6 
 date:  285 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  285 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  285 
@@ -10886,10 +9746,6 @@ date:  286
 6 
 date:  286 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  286 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  286 
@@ -10924,10 +9780,6 @@ date:  287
 6 
 date:  287 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  287 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  287 
@@ -10962,10 +9814,6 @@ date:  288
 6 
 date:  288 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  288 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  288 
@@ -11000,10 +9848,6 @@ date:  289
 6 
 date:  289 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  289 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  289 
@@ -11038,10 +9882,6 @@ date:  290
 6 
 date:  290 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  290 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  290 
@@ -11076,10 +9916,6 @@ date:  291
 6 
 date:  291 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  291 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  291 
@@ -11114,10 +9950,6 @@ date:  292
 6 
 date:  292 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  292 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  292 
@@ -11152,10 +9984,6 @@ date:  293
 6 
 date:  293 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  293 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  293 
@@ -11190,10 +10018,6 @@ date:  294
 6 
 date:  294 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  294 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  294 
@@ -11228,10 +10052,6 @@ date:  295
 6 
 date:  295 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  295 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  295 
@@ -11266,10 +10086,6 @@ date:  296
 6 
 date:  296 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  296 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  296 
@@ -11304,10 +10120,6 @@ date:  297
 6 
 date:  297 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  297 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  297 
@@ -11342,10 +10154,6 @@ date:  298
 6 
 date:  298 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  298 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  298 
@@ -11380,10 +10188,6 @@ date:  299
 6 
 date:  299 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  299 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  299 
@@ -11418,10 +10222,6 @@ date:  300
 6 
 date:  300 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  300 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  300 
@@ -11456,10 +10256,6 @@ date:  301
 6 
 date:  301 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  301 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  301 
@@ -11494,10 +10290,6 @@ date:  302
 6 
 date:  302 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  302 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  302 
@@ -11532,10 +10324,6 @@ date:  303
 6 
 date:  303 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  303 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  303 
@@ -11570,10 +10358,6 @@ date:  304
 6 
 date:  304 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  304 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  304 
@@ -11608,10 +10392,6 @@ date:  305
 6 
 date:  305 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  305 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  305 
@@ -11646,10 +10426,6 @@ date:  306
 6 
 date:  306 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  306 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  306 
@@ -11684,10 +10460,6 @@ date:  307
 6 
 date:  307 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  307 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  307 
@@ -11722,10 +10494,6 @@ date:  308
 6 
 date:  308 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  308 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  308 
@@ -11760,10 +10528,6 @@ date:  309
 6 
 date:  309 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  309 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  309 
@@ -11798,10 +10562,6 @@ date:  310
 6 
 date:  310 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  310 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  310 
@@ -11836,10 +10596,6 @@ date:  311
 6 
 date:  311 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  311 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  311 
@@ -11874,10 +10630,6 @@ date:  312
 6 
 date:  312 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  312 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  312 
@@ -11912,10 +10664,6 @@ date:  313
 6 
 date:  313 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  313 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  313 
@@ -11950,10 +10698,6 @@ date:  314
 6 
 date:  314 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  314 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  314 
@@ -11988,10 +10732,6 @@ date:  315
 6 
 date:  315 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  315 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  315 
@@ -12026,10 +10766,6 @@ date:  316
 6 
 date:  316 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  316 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  316 
@@ -12064,10 +10800,6 @@ date:  317
 6 
 date:  317 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  317 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  317 
@@ -12102,10 +10834,6 @@ date:  318
 6 
 date:  318 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  318 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  318 
@@ -12140,10 +10868,6 @@ date:  319
 6 
 date:  319 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  319 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  319 
@@ -12178,10 +10902,6 @@ date:  320
 6 
 date:  320 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  320 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  320 
@@ -12216,10 +10936,6 @@ date:  321
 6 
 date:  321 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  321 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  321 
@@ -12254,10 +10970,6 @@ date:  322
 6 
 date:  322 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  322 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  322 
@@ -12292,10 +11004,6 @@ date:  323
 6 
 date:  323 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  323 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  323 
@@ -12330,10 +11038,6 @@ date:  324
 6 
 date:  324 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  324 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  324 
@@ -12368,10 +11072,6 @@ date:  325
 6 
 date:  325 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  325 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  325 
@@ -12406,10 +11106,6 @@ date:  326
 6 
 date:  326 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  326 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  326 
@@ -12444,10 +11140,6 @@ date:  327
 6 
 date:  327 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  327 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  327 
@@ -12482,10 +11174,6 @@ date:  328
 6 
 date:  328 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  328 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  328 
@@ -12520,10 +11208,6 @@ date:  329
 6 
 date:  329 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  329 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  329 
@@ -12558,10 +11242,6 @@ date:  330
 6 
 date:  330 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  330 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  330 
@@ -12596,10 +11276,6 @@ date:  331
 6 
 date:  331 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  331 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  331 
@@ -12634,10 +11310,6 @@ date:  332
 6 
 date:  332 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  332 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  332 
@@ -12672,10 +11344,6 @@ date:  333
 6 
 date:  333 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  333 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  333 
@@ -12710,10 +11378,6 @@ date:  334
 6 
 date:  334 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  334 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  334 
@@ -12748,10 +11412,6 @@ date:  335
 6 
 date:  335 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  335 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  335 
@@ -12786,10 +11446,6 @@ date:  336
 6 
 date:  336 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  336 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  336 
@@ -12824,10 +11480,6 @@ date:  337
 6 
 date:  337 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  337 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  337 
@@ -12862,10 +11514,6 @@ date:  338
 6 
 date:  338 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  338 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  338 
@@ -12900,10 +11548,6 @@ date:  339
 6 
 date:  339 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  339 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  339 
@@ -12938,10 +11582,6 @@ date:  340
 6 
 date:  340 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  340 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  340 
@@ -12976,10 +11616,6 @@ date:  341
 6 
 date:  341 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  341 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  341 
@@ -13014,10 +11650,6 @@ date:  342
 6 
 date:  342 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  342 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  342 
@@ -13052,10 +11684,6 @@ date:  343
 6 
 date:  343 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  343 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  343 
@@ -13090,10 +11718,6 @@ date:  344
 6 
 date:  344 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  344 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  344 
@@ -13128,10 +11752,6 @@ date:  345
 6 
 date:  345 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  345 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  345 
@@ -13166,10 +11786,6 @@ date:  346
 6 
 date:  346 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  346 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  346 
@@ -13204,10 +11820,6 @@ date:  347
 6 
 date:  347 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  347 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  347 
@@ -13242,10 +11854,6 @@ date:  348
 6 
 date:  348 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  348 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  348 
@@ -13280,10 +11888,6 @@ date:  349
 6 
 date:  349 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  349 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  349 
@@ -13318,10 +11922,6 @@ date:  350
 6 
 date:  350 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  350 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  350 
@@ -13356,10 +11956,6 @@ date:  351
 6 
 date:  351 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  351 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  351 
@@ -13394,10 +11990,6 @@ date:  352
 6 
 date:  352 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  352 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  352 
@@ -13432,10 +12024,6 @@ date:  353
 6 
 date:  353 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  353 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  353 
@@ -13470,10 +12058,6 @@ date:  354
 6 
 date:  354 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  354 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  354 
@@ -13508,10 +12092,6 @@ date:  355
 6 
 date:  355 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  355 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  355 
@@ -13546,10 +12126,6 @@ date:  356
 6 
 date:  356 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  356 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  356 
@@ -13584,10 +12160,6 @@ date:  357
 6 
 date:  357 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  357 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  357 
@@ -13622,10 +12194,6 @@ date:  358
 6 
 date:  358 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  358 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  358 
@@ -13660,10 +12228,6 @@ date:  359
 6 
 date:  359 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  359 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  359 
@@ -13698,10 +12262,6 @@ date:  360
 6 
 date:  360 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  360 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  360 
@@ -13736,10 +12296,6 @@ date:  361
 6 
 date:  361 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  361 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  361 
@@ -13774,10 +12330,6 @@ date:  362
 6 
 date:  362 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  362 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  362 
@@ -13812,10 +12364,6 @@ date:  363
 6 
 date:  363 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  363 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  363 
@@ -13850,10 +12398,6 @@ date:  364
 6 
 date:  364 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  364 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  364 
@@ -13888,10 +12432,6 @@ date:  365
 6 
 date:  365 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  365 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  365 
@@ -13926,10 +12466,6 @@ date:  366
 6 
 date:  366 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  366 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  366 
@@ -13964,10 +12500,6 @@ date:  367
 6 
 date:  367 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  367 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  367 
@@ -14002,10 +12534,6 @@ date:  368
 6 
 date:  368 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  368 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  368 
@@ -14040,10 +12568,6 @@ date:  369
 6 
 date:  369 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  369 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  369 
@@ -14078,10 +12602,6 @@ date:  370
 6 
 date:  370 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  370 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  370 
@@ -14116,10 +12636,6 @@ date:  371
 6 
 date:  371 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  371 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  371 
@@ -14154,10 +12670,6 @@ date:  372
 6 
 date:  372 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  372 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  372 
@@ -14192,10 +12704,6 @@ date:  373
 6 
 date:  373 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  373 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  373 
@@ -14230,10 +12738,6 @@ date:  374
 6 
 date:  374 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  374 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  374 
@@ -14268,10 +12772,6 @@ date:  375
 6 
 date:  375 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  375 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  375 
@@ -14306,10 +12806,6 @@ date:  376
 6 
 date:  376 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  376 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  376 
@@ -14344,10 +12840,6 @@ date:  377
 6 
 date:  377 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  377 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  377 
@@ -14382,10 +12874,6 @@ date:  378
 6 
 date:  378 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  378 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  378 
@@ -14420,10 +12908,6 @@ date:  379
 6 
 date:  379 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  379 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  379 
@@ -14458,10 +12942,6 @@ date:  380
 6 
 date:  380 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  380 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  380 
@@ -14496,10 +12976,6 @@ date:  381
 6 
 date:  381 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  381 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  381 
@@ -14534,10 +13010,6 @@ date:  382
 6 
 date:  382 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  382 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  382 
@@ -14572,10 +13044,6 @@ date:  383
 6 
 date:  383 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  383 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  383 
@@ -14610,10 +13078,6 @@ date:  384
 6 
 date:  384 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  384 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  384 
@@ -14648,10 +13112,6 @@ date:  385
 6 
 date:  385 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  385 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  385 
@@ -14686,10 +13146,6 @@ date:  386
 6 
 date:  386 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  386 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  386 
@@ -14724,10 +13180,6 @@ date:  387
 6 
 date:  387 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  387 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  387 
@@ -14762,10 +13214,6 @@ date:  388
 6 
 date:  388 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  388 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  388 
@@ -14800,10 +13248,6 @@ date:  389
 6 
 date:  389 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  389 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  389 
@@ -14838,10 +13282,6 @@ date:  390
 6 
 date:  390 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  390 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  390 
@@ -14876,10 +13316,6 @@ date:  391
 6 
 date:  391 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  391 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  391 
@@ -14914,10 +13350,6 @@ date:  392
 6 
 date:  392 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  392 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  392 
@@ -14952,10 +13384,6 @@ date:  393
 6 
 date:  393 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  393 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  393 
@@ -14990,10 +13418,6 @@ date:  394
 6 
 date:  394 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  394 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  394 
@@ -15028,10 +13452,6 @@ date:  395
 6 
 date:  395 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  395 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  395 
@@ -15066,10 +13486,6 @@ date:  396
 6 
 date:  396 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  396 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  396 
@@ -15104,10 +13520,6 @@ date:  397
 6 
 date:  397 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  397 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  397 
@@ -15142,10 +13554,6 @@ date:  398
 6 
 date:  398 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  398 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  398 
@@ -15180,10 +13588,6 @@ date:  399
 6 
 date:  399 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  399 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  399 
@@ -15218,10 +13622,6 @@ date:  400
 6 
 date:  400 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  400 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  400 
@@ -15256,10 +13656,6 @@ date:  401
 6 
 date:  401 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  401 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  401 
@@ -15294,10 +13690,6 @@ date:  402
 6 
 date:  402 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  402 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  402 
@@ -15332,10 +13724,6 @@ date:  403
 6 
 date:  403 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  403 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  403 
@@ -15370,10 +13758,6 @@ date:  404
 6 
 date:  404 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  404 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  404 
@@ -15408,10 +13792,6 @@ date:  405
 6 
 date:  405 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  405 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  405 
@@ -15446,10 +13826,6 @@ date:  406
 6 
 date:  406 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  406 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  406 
@@ -15484,10 +13860,6 @@ date:  407
 6 
 date:  407 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  407 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  407 
@@ -15522,10 +13894,6 @@ date:  408
 6 
 date:  408 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  408 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  408 
@@ -15560,10 +13928,6 @@ date:  409
 6 
 date:  409 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  409 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  409 
@@ -15598,10 +13962,6 @@ date:  410
 6 
 date:  410 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  410 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  410 
@@ -15636,10 +13996,6 @@ date:  411
 6 
 date:  411 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  411 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  411 
@@ -15674,10 +14030,6 @@ date:  412
 6 
 date:  412 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  412 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  412 
@@ -15712,10 +14064,6 @@ date:  413
 6 
 date:  413 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  413 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  413 
@@ -15750,10 +14098,6 @@ date:  414
 6 
 date:  414 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  414 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  414 
@@ -15788,10 +14132,6 @@ date:  415
 6 
 date:  415 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  415 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  415 
@@ -15826,10 +14166,6 @@ date:  416
 6 
 date:  416 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  416 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  416 
@@ -15864,10 +14200,6 @@ date:  417
 6 
 date:  417 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  417 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  417 
@@ -15902,10 +14234,6 @@ date:  418
 6 
 date:  418 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  418 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  418 
@@ -15940,10 +14268,6 @@ date:  419
 6 
 date:  419 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  419 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  419 
@@ -15978,10 +14302,6 @@ date:  420
 6 
 date:  420 
  nrows of subbasin:  66 
- strahler number:  7 
-7 
-date:  420 
- nrows of subbasin:  66 
  strahler number:  8 
 8 
 date:  420 
@@ -16014,10 +14334,6 @@ date:  421
  nrows of subbasin:  66 
  strahler number:  6 
 6 
-date:  421 
- nrows of subbasin:  66 
- strahler number:  7 
-7 
 date:  421 
  nrows of subbasin:  66 
  strahler number:  8 
@@ -16027,4 +14343,4 @@ date:  421
  strahler number:  9 
 9 
 
- 9.784328 
+ 9.020628 
