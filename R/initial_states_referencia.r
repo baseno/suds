@@ -8,8 +8,8 @@ require(sf)
 ### assuming subbasin 64 as close to reference state.
 
 
-input.data <- "~/proj/SUDS_Famalicao/CAPITULO_2/modelo_rede_drenagem/run_model/"
-
+#input.data <- "~/proj/SUDS_Famalicao/CAPITULO_2/modelo_rede_drenagem/run_model/"
+input.data <- "~/proj/suds/input.data/"
 step=5*60
 
 ### prepare precipitation

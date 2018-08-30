@@ -3,7 +3,8 @@ require(dplyr)
 require(wasa.ops)
 require(hydraulics)                                        #require(sf)
 
-input.data <- "~/proj/SUDS_Famalicao/CAPITULO_2/modelo_rede_drenagem/run_model/"
+#input.data <- "~/proj/SUDS_Famalicao/CAPITULO_2/modelo_rede_drenagem/run_model/"
+input.data <- "~/proj/suds/input.data/"
 
 step=5*60
 
