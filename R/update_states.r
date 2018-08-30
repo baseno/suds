@@ -23,7 +23,6 @@ loop <- function(subbasin_initial,I0,strahler)
     {
         subbasin_out <- mutate(subbasin_out,i=slice(I0,dti) %>% pull(value))
         cat("date: ",dti,"\n","nrows of subbasin: ",nrow(subbasin_out),"\n")
-        
         for(stra in list.str)
         {
             cat("date: ",dti,"\n","nrows of subbasin: ",nrow(subbasin_out),"\n","strahler number: ",stra,"\n")
@@ -183,7 +182,7 @@ lossModel <- function(subbasin)
 
     r <- I*dt/3600
     
-    runoff <- select(subbasin,name,hi,he,hi.max,area,c.factor)
+    runoff <- select(subbasin,name,hi,he,hi.max,area)
     
     if(r==0) ## in case it does not rain...
     {
@@ -194,7 +193,7 @@ lossModel <- function(subbasin)
     } else ## in case it rains...
     {
         runoff <- runoff %>%
-            mutate(runoff_in=ifelse(hi > r,0,0.001*area*(r-hi)*c.factor/dt), ## generate runoff in case the soil compartment is full (this should be replaced by green ampt...)
+            mutate(runoff_in=ifelse(hi > r,0,0.001*area*(r-hi)/dt), ## generate runoff in case the soil compartment is full (this should be replaced by green ampt...)
                    hi=ifelse(hi > r,hi-r,0)) %>% ## fill the soil compartment until it is totally full, ie hi=0
             select(name,runoff_in,hi)
     }
@@ -261,7 +260,7 @@ updateSubbasinAfterRunoff <- function(subbasin,runoff)
 #' @export
 routePipe <- function(subbasin)
 {
-    pipe <- select(subbasin,name,affluent,runoff.out,pipe.V,Kpipe,X,step) %>%
+    pipe <- select(subbasin,name,affluent,runoff.out,pipe.V,Kpipe,X,step,length_colector) %>%
         mutate(Qin=ifelse(length_colector==0,0,affluent+runoff.out),V=0,Qout=0) %>%
         rename(Vprevious=pipe.V,K=Kpipe,dt=step) %>%
         Q_muskingum %>%

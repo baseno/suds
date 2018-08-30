@@ -3,6 +3,7 @@
 export(computeEffluent)
 export(gatherAffluentStrahler)
 export(loop)
+export(loop_runoff)
 export(lossModel)
 export(makeSummary)
 export(routePipe)

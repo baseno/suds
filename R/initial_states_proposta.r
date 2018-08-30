@@ -27,7 +27,6 @@ I0 <- left_join(tdf,I0h,by=c("year","month","day","hour")) %>%
     mutate(dt=ymd_hms(paste(year,month,day,hour,minute,second))) %>%
     select(dt,value)
 
-
 ## prepare subbasin
 
 losses.sb <- readRDS(paste0(input.data,"/losses.rds")) %>% rename(name=subbacia) %>% as_tibble

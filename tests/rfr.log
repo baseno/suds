@@ -25,6 +25,10 @@ The following objects are masked from ‘package:base’:
 
 Loading required package: wasa.ops
 Loading required package: hydraulics
+Loading required package: sf
+Linking to GEOS 3.6.2, GDAL 2.2.3, proj.4 4.9.3
+Joining, by = "model"
+Joining, by = "model"
 Loading required package: suds
 Joining, by = "id"
 Joining, by = "subbacia"
@@ -16027,4 +16031,4 @@ date:  421
  strahler number:  9 
 9 
 
- 11.74086 
+ 8.020407 
