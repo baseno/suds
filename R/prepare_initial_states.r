@@ -55,6 +55,12 @@ subbasin <- readRDS(paste0(input.data,"/parm_sb.rds")) %>%
     mutate(runoff.V=0,runoff=0,runoff.out=0) %>% ## state variables
     mutate(structure.V=0,structure.Qin=0,structure.Qout=0,structure.Qoverflow=0) ## state variables
 
+
+
+### add K, phi, porosity, soildepth
+
+
+
 subbasin.template <- subbasin
 
 ##### define network
