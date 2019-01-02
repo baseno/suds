@@ -180,8 +180,8 @@ gatherAffluentStrahler <- function(network.subset, subbasin)
 #' @export
 updateSubbasinAfterLossModel <- function(subbasin,runoff)
 {
-    subbasin.updated <- select(subbasin,-runoff,-hi) %>%
-        left_join(.,select(runoff,name,runoff_in,hi),by="name") %>%
+    subbasin.updated <- select(subbasin,-runoff,-hi,loss) %>%
+        left_join(.,select(runoff,name,runoff_in,hi,loss),by="name") %>%
         rename(runoff=runoff_in)
 
     return(subbasin.updated)
@@ -199,7 +199,7 @@ routeRunoff <- function(subbasin)
         rename(Vprevious=runoff.V,K=Ksubbacia,dt=step) %>%
         Q_muskingum %>%
         V_muskingum %>%
-        select(name,Qin,Qout,V)
+        select(name,Qin,Qout,V,loss)
 
 
 #    runoff <- select(subbasin,name,runoff,runoff.V,area,c.factor,L,n,i,S) %>%

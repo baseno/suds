@@ -64,7 +64,7 @@ subbasin <- readRDS(paste0(input.data,"/parm_sb.rds")) %>%
     mutate(model="referencia",volume_lago=0,length_colector=0)
 
 
-subbasin <- subbasin %>% filter(name==64) %>% select(-name,-bacia,-S,-area,-L,-Qoutmax) %>% left_join(select(subbasin,name,bacia,S,area,L,model),.)
+subbasin <- subbasin %>% filter(name==64) %>% select(-name,-bacia,-S,-area,-L) %>% left_join(select(subbasin,name,bacia,S,area,L,model),.)
 
 
 subbasin.template <- subbasin
