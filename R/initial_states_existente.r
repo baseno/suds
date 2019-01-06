@@ -54,7 +54,8 @@ subbasin <- readRDS(paste0(input.data,"/parm_sb.rds")) %>%
     mutate(Qoutmax=0,volume_lago=0) %>%  ### only for existente!!!
     mutate(pipe.V=0,pipe.Qin=0,pipe.Qout=0) %>% ## state variables
     mutate(runoff.V=0,runoff=0,runoff.out=0) %>% ## state variables
-    mutate(structure.V=0,structure.Qin=0,structure.Qout=0,structure.Qoverflow=0) ## state variables
+    mutate(structure.V=0,structure.Qin=0,structure.Qout=0,structure.Qoverflow=0) %>%
+    mutate(loss=0)
 
 subbasin.template <- subbasin
 

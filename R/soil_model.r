@@ -70,40 +70,6 @@ actET <- function(soil_state,soil_param,meteo)
     return(new_soil_state)
 }
 
-
-#' compute effective runoff with loss model
-#' @return runoff
-#' @param subbasin is the global dataframe including rainfall intensity
-#' @export
-lossModel_green_ampt <- function(subbasin)
-{
-    
-    dt <- subbasin %>% pull(step) %>% .[1]
-    I <- subbasin %>% pull(i) %>% .[1]
-
-    dt <- dt/3600
-    
-    runoff <- select(subbasin,name,L,Ft,,hi.max,area)
-    
-    if(r==0) ## in case it does not rain...
-    {
-        runoff <- runoff %>%
-            mutate(hi=hi+he*step/(24*60*60),runoff_in=0) %>% ## assign zero in runoff generation and evaporate from soil
-            mutate(hi=ifelse(hi>hi.max,hi.max,hi))  %>% ## evaporate only until the soil compartment is empty 
-            select(name,runoff_in,hi) 
-    } else ## in case it rains...
-    {
-        runoff <- runoff %>%
-            mutate(runoff_in=ifelse(hi > r,0,0.001*area*(r-hi)/dt), ## generate runoff in case the soil compartment is full (this should be replaced by green ampt...)
-                   hi=ifelse(hi > r,hi-r,0)) %>% ## fill the soil compartment until it is totally full, ie hi=0
-            select(name,runoff_in,hi)
-    }
-
-    return(runoff)
-}
-
-
-
 #' compute effective runoff with loss model
 #' @return runoff
 #' @param subbasin is the global dataframe including rainfall intensity
@@ -122,13 +88,13 @@ lossModel <- function(subbasin)
         runoff <- runoff %>%
             mutate(loss=he*step/(24*60*60),hi=hi+he*step/(24*60*60),runoff_in=0) %>% ## assign zero in runoff generation and evaporate from soil
             mutate(hi=ifelse(hi>hi.max,hi.max,hi))  %>% ## evaporate only until the soil compartment is empty 
-            select(name,runoff_in,hi) 
+            select(name,runoff_in,hi,loss) 
     } else ## in case it rains...
     {
         runoff <- runoff %>%
             mutate(loss=0,runoff_in=ifelse(hi > r,0,0.001*area*(r-hi)/dt), ## generate runoff in case the soil compartment is full (this should be replaced by green ampt...)
                    hi=ifelse(hi > r,hi-r,0)) %>% ## fill the soil compartment until it is totally full, ie hi=0
-            select(name,runoff_in,hi)
+            select(name,runoff_in,hi,loss)
     }
 
     return(runoff)

@@ -61,7 +61,8 @@ subbasin <- readRDS(paste0(input.data,"/parm_sb.rds")) %>%
     mutate(pipe.V=0,pipe.Qin=0,pipe.Qout=0) %>% ## state variables
     mutate(runoff.V=0,runoff=0,runoff.out=0) %>% ## state variables
     mutate(structure.V=0,structure.Qin=0,structure.Qout=0,structure.Qoverflow=0) %>% ## state variables
-    mutate(model="referencia",volume_lago=0,length_colector=0)
+    mutate(model="referencia",volume_lago=0,length_colector=0) %>%
+    mutate(loss=0)
 
 
 subbasin <- subbasin %>% filter(name==64) %>% select(-name,-bacia,-S,-area,-L) %>% left_join(select(subbasin,name,bacia,S,area,L,model),.)
