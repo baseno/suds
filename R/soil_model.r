@@ -86,7 +86,7 @@ lossModel <- function(subbasin)
     if(r==0) ## in case it does not rain...
     {
         runoff <- runoff %>%
-            mutate(loss=he*step/(24*60*60),hi=hi+he*step/(24*60*60),runoff_in=0) %>% ## assign zero in runoff generation and evaporate from soil
+            mutate(loss=if(he*step/(24*60*60) < (hi.max-hi),he*step/(24*60*60),hi.max-hi),hi=hi+he*step/(24*60*60),runoff_in=0)  %>% ## assign zero in runoff generation and evaporate from soil
             mutate(hi=ifelse(hi>hi.max,hi.max,hi))  %>% ## evaporate only until the soil compartment is empty 
             select(name,runoff_in,hi,loss) 
     } else ## in case it rains...
